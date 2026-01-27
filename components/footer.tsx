@@ -8,6 +8,10 @@ export function Footer() {
       { name: "School Management System", href: "/products#school-management" },
       { name: "All Products", href: "/products" },
     ],
+    Resources: [
+      { name: "Blog", href: "/blog" },
+      { name: "RSS", href: "/blog/rss.xml" },
+    ],
     Company: [
       { name: "About Us", href: "/about" },
       { name: "Our Team", href: "/about#team" },
@@ -20,8 +24,20 @@ export function Footer() {
   };
 
   return (
-    <footer className="border-t bg-muted/50">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="relative border-t bg-background/40 backdrop-blur">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.06]">
+        <svg className="h-full w-full" aria-hidden="true">
+          <defs>
+            <pattern id="footer-grid" width="36" height="36" patternUnits="userSpaceOnUse">
+              <path d="M36 0H0V36" fill="none" stroke="currentColor" strokeWidth="1" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#footer-grid)" className="text-primary" />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-4 py-12 relative">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Brand */}
           <div className="space-y-4">
@@ -45,7 +61,7 @@ export function Footer() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:underline underline-offset-4"
                     >
                       {link.name}
                     </Link>
@@ -56,7 +72,7 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-8 border-t pt-8">
+        <div className="mt-8 border-t/60 pt-8">
           <p className="text-center text-sm text-muted-foreground">
             © {currentYear} Turicks. All rights reserved.
           </p>
