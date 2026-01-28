@@ -15,15 +15,39 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://turicks.com";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://turicks.com"),
+  metadataBase: new URL(SITE_URL),
   title: "Turicks - Tailored SaaS Solutions for Organizations",
-  description: "We build custom SaaS products and provide development services for organizations. From school management systems to enterprise solutions, we create software that fits your unique requirements.",
-  keywords: ["SaaS", "custom software", "school management system", "enterprise solutions", "software development", "agency"],
+  description:
+    "We build custom SaaS products and provide development services for organizations. From school management systems to enterprise solutions, we create software that fits your unique requirements.",
+  keywords: [
+    "SaaS",
+    "custom software",
+    "school management system",
+    "enterprise solutions",
+    "software development",
+    "agency",
+  ],
   openGraph: {
     title: "Turicks - Tailored SaaS Solutions",
     description: "Building tailored SaaS solutions for organizations",
     type: "website",
+    url: SITE_URL,
+    siteName: "Turicks",
+    locale: "en_US",
+    images: [
+      {
+        url: `${SITE_URL}/globe.svg`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Turicks - Tailored SaaS Solutions",
+    description: "Building tailored SaaS solutions for organizations",
+    images: [`${SITE_URL}/globe.svg`],
   },
   alternates: {
     canonical: "/",
@@ -40,6 +64,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Turicks",
+              url: SITE_URL,
+              logo: `${SITE_URL}/apple-icon`,
+            }),
+          }}
+        />
         <ColorfulVectors />
         <div className="flex min-h-screen flex-col">
           <Header />

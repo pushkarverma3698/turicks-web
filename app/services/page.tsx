@@ -1,20 +1,70 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, ArrowRight, Code, Palette, Database, Smartphone, Cloud, Shield } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  CheckCircle2,
+  ArrowRight,
+  Code,
+  Palette,
+  Database,
+  Smartphone,
+  Cloud,
+  Shield,
+} from "lucide-react";
 import { DecorativeOrbs } from "@/components/decorative-orbs";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://turicks.com";
 
 export const metadata: Metadata = {
   title: "Our Services - Turicks",
-  description: "We are a software development agency specializing in custom SaaS solutions, web applications, and tailored software for organizations.",
+  description:
+    "We are a software development agency specializing in custom SaaS solutions, web applications, and tailored software for organizations.",
+  keywords: [
+    "custom SaaS development",
+    "web applications",
+    "AI automation",
+    "UI/UX services",
+    "cloud infrastructure",
+    "security compliance",
+  ],
+  openGraph: {
+    title: "Our Services - Turicks",
+    description:
+      "We are a software development agency specializing in custom SaaS solutions, web applications, and tailored software for organizations.",
+    type: "website",
+    url: `${SITE_URL}/services`,
+    siteName: "Turicks",
+    images: [
+      {
+        url: `${SITE_URL}/globe.svg`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Services - Turicks",
+    description:
+      "We are a software development agency specializing in custom SaaS solutions, web applications, and tailored software for organizations.",
+    images: [`${SITE_URL}/globe.svg`],
+  },
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 const services = [
   {
     icon: Code,
     title: "AI-Driven Custom SaaS Development",
-    description: "From concept to deployment, we build automated, scalable SaaS platforms with AI integration tailored to your organization's unique requirements.",
+    description:
+      "From concept to deployment, we build automated, scalable SaaS platforms with AI integration tailored to your organization's unique requirements.",
     features: [
       "AI-powered automation",
       "Full-stack development",
@@ -26,7 +76,8 @@ const services = [
   {
     icon: Database,
     title: "Automated Enterprise Solutions",
-    description: "Complex automated software systems for large organizations with AI-driven workflows, integrations, and security requirements.",
+    description:
+      "Complex automated software systems for large organizations with AI-driven workflows, integrations, and security requirements.",
     features: [
       "AI-driven automation",
       "System architecture design",
@@ -38,7 +89,8 @@ const services = [
   {
     icon: Smartphone,
     title: "Mobile Applications",
-    description: "Native and cross-platform mobile apps with AI features that extend your software's reach to iOS and Android devices.",
+    description:
+      "Native and cross-platform mobile apps with AI features that extend your software's reach to iOS and Android devices.",
     features: [
       "iOS & Android development",
       "Cross-platform solutions",
@@ -49,7 +101,8 @@ const services = [
   {
     icon: Palette,
     title: "UI/UX Services",
-    description: "Product UI/UX for SaaS: research, flows, wireframes, prototypes, and polished interfaces that users love.",
+    description:
+      "Product UI/UX for SaaS: research, flows, wireframes, prototypes, and polished interfaces that users love.",
     features: [
       "User research & analysis",
       "Wireframing & prototyping",
@@ -61,7 +114,8 @@ const services = [
   {
     icon: Cloud,
     title: "Cloud Infrastructure",
-    description: "Reliable, secure, and scalable cloud infrastructure with automated deployment to power your applications and data.",
+    description:
+      "Reliable, secure, and scalable cloud infrastructure with automated deployment to power your applications and data.",
     features: [
       "Automated cloud architecture",
       "DevOps & CI/CD setup",
@@ -72,7 +126,8 @@ const services = [
   {
     icon: Shield,
     title: "Security & Compliance",
-    description: "Enterprise-grade security practices and compliance support with automated monitoring to protect your data and users.",
+    description:
+      "Enterprise-grade security practices and compliance support with automated monitoring to protect your data and users.",
     features: [
       "Security audits",
       "Compliance consulting",
@@ -86,32 +141,38 @@ const processSteps = [
   {
     number: "01",
     title: "Discovery & Planning",
-    description: "We start by understanding your organization, goals, and requirements through detailed consultations.",
+    description:
+      "We start by understanding your organization, goals, and requirements through detailed consultations.",
   },
   {
     number: "02",
     title: "Design & Architecture",
-    description: "Our team designs the solution architecture and user experience, ensuring it aligns with your needs.",
+    description:
+      "Our team designs the solution architecture and user experience, ensuring it aligns with your needs.",
   },
   {
     number: "03",
     title: "Development",
-    description: "We build your solution using best practices, modern technologies, and agile methodologies.",
+    description:
+      "We build your solution using best practices, modern technologies, and agile methodologies.",
   },
   {
     number: "04",
     title: "Testing & Quality Assurance",
-    description: "Rigorous testing ensures your software is reliable, secure, and performs as expected.",
+    description:
+      "Rigorous testing ensures your software is reliable, secure, and performs as expected.",
   },
   {
     number: "05",
     title: "Deployment & Launch",
-    description: "We handle deployment, migration, and launch, ensuring a smooth transition to your new system.",
+    description:
+      "We handle deployment, migration, and launch, ensuring a smooth transition to your new system.",
   },
   {
     number: "06",
     title: "Support & Maintenance",
-    description: "Ongoing support, updates, and maintenance to keep your software running smoothly.",
+    description:
+      "Ongoing support, updates, and maintenance to keep your software running smoothly.",
   },
 ];
 
@@ -123,14 +184,14 @@ export default function ServicesPage() {
         <DecorativeOrbs className="opacity-60" />
         <div className="container mx-auto px-4 relative">
           <div className="mx-auto max-w-3xl text-center">
-          <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            Our Services
-          </h1>
-          <p className="text-lg text-muted-foreground md:text-xl">
-            We are a software development agency specializing in building custom
-            SaaS solutions and tailored software for organizations. Whatever your
-            requirements, we can build it.
-          </p>
+            <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              Our Services
+            </h1>
+            <p className="text-lg text-muted-foreground md:text-xl">
+              We are a software development agency specializing in building
+              custom SaaS solutions and tailored software for organizations.
+              Whatever your requirements, we can build it.
+            </p>
           </div>
         </div>
       </section>
@@ -166,7 +227,10 @@ export default function ServicesPage() {
                   <CardContent className="flex-1">
                     <ul className="space-y-2">
                       {service.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2 text-sm">
+                        <li
+                          key={feature}
+                          className="flex items-start gap-2 text-sm"
+                        >
                           <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                           <span>{feature}</span>
                         </li>
@@ -210,8 +274,8 @@ export default function ServicesPage() {
             Let&apos;s Build Your Next Dream Solution
           </h2>
           <p className="mb-8 mx-auto max-w-2xl text-muted-foreground">
-            Let&apos;s discuss your project requirements and how we can help bring
-            your vision to life with AI-driven, automated solutions.
+            Let&apos;s discuss your project requirements and how we can help
+            bring your vision to life with AI-driven, automated solutions.
           </p>
           <Button asChild size="lg">
             <Link href="/contact">

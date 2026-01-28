@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,6 +12,7 @@ export function Footer() {
     Resources: [
       { name: "Blog", href: "/blog" },
       { name: "RSS", href: "/blog/rss.xml" },
+      { name: "Sitemap", href: "/sitemap.xml" },
     ],
     Company: [
       { name: "About Us", href: "/about" },
@@ -19,9 +21,17 @@ export function Footer() {
     ],
     Support: [
       { name: "Contact", href: "/contact" },
-      { name: "Documentation", href: "#" },
+      { name: "Robots", href: "/robots.txt" },
     ],
   };
+
+  const socialLinks = [
+    { name: "LinkedIn", href: "https://www.linkedin.com", icon: Linkedin },
+    { name: "Twitter", href: "https://x.com", icon: Twitter },
+    { name: "YouTube", href: "https://www.youtube.com", icon: Youtube },
+    { name: "Instagram", href: "https://www.instagram.com", icon: Instagram },
+    { name: "Facebook", href: "https://www.facebook.com", icon: Facebook },
+  ];
 
   return (
     <footer className="relative border-t bg-background/40 backdrop-blur">
@@ -29,11 +39,26 @@ export function Footer() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.06]">
         <svg className="h-full w-full" aria-hidden="true">
           <defs>
-            <pattern id="footer-grid" width="36" height="36" patternUnits="userSpaceOnUse">
-              <path d="M36 0H0V36" fill="none" stroke="currentColor" strokeWidth="1" />
+            <pattern
+              id="footer-grid"
+              width="36"
+              height="36"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M36 0H0V36"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+              />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#footer-grid)" className="text-primary" />
+          <rect
+            width="100%"
+            height="100%"
+            fill="url(#footer-grid)"
+            className="text-primary"
+          />
         </svg>
       </div>
 
@@ -50,26 +75,47 @@ export function Footer() {
               Building tailored SaaS solutions for organizations. We create
               custom software that fits your unique requirements.
             </p>
+            <div className="flex items-center gap-3" aria-label="Social media">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-muted-foreground/20 text-muted-foreground transition-colors hover:text-foreground hover:border-primary/40 hover:bg-muted/50"
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
           {/* Links */}
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title} className="space-y-4">
-              <h3 className="text-sm font-semibold">{title}</h3>
-              <ul className="space-y-2">
-                {links.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:underline underline-offset-4"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          <nav aria-label="Footer">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+              {Object.entries(footerLinks).map(([title, links]) => (
+                <div key={title} className="space-y-4">
+                  <h3 className="text-sm font-semibold">{title}</h3>
+                  <ul className="space-y-2">
+                    {links.map((link) => (
+                      <li key={link.name}>
+                        <Link
+                          href={link.href}
+                          className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:underline underline-offset-4"
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
-          ))}
+          </nav>
         </div>
 
         <div className="mt-8 border-t/60 pt-8">

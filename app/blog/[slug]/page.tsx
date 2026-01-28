@@ -11,20 +11,44 @@ export async function generateStaticParams(): Promise<Params[]> {
   return getBlogPosts().map((p) => ({ slug: p.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Params;
+}): Promise<Metadata> {
   const { slug } = params;
   const post = getBlogPost(slug);
   if (!post) return {};
 
   const title = `${post.title} - Turicks`;
+  const url = `${SITE_URL}/blog/${post.slug}`;
 
   return {
     title,
     description: post.description,
+    keywords: post.tags,
     openGraph: {
       title,
       description: post.description,
       type: "article",
+      url,
+      siteName: "Turicks",
+      images: [
+        {
+          url: `${SITE_URL}/globe.svg`,
+        },
+      ],
+      publishedTime: post.dateISO,
+      authors: ["Turicks"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: post.description,
+      images: [`${SITE_URL}/globe.svg`],
+    },
+    alternates: {
+      canonical: `/blog/${post.slug}`,
     },
   };
 }
@@ -37,7 +61,10 @@ function renderBlocks(content: string) {
     .filter(Boolean);
 
   return blocks.map((block, idx) => {
-    const lines = block.split("\n").map((l) => l.trim()).filter(Boolean);
+    const lines = block
+      .split("\n")
+      .map((l) => l.trim())
+      .filter(Boolean);
     const isList = lines.length > 1 && lines.every((l) => l.startsWith("- "));
 
     if (isList) {
@@ -73,17 +100,34 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     datePublished: post.dateISO,
     dateModified: post.dateISO,
     author: [{ "@type": "Organization", name: "Turicks" }],
-    publisher: { "@type": "Organization", name: "Turicks" },
-    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
+    publisher: {
+      "@type": "Organization",
+      name: "Turicks",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/apple-icon`,
+      },
+    },
+    image: `${SITE_URL}/globe.svg`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/blog/${post.slug}`,
+    },
   };
 
   return (
     <div className="flex flex-col">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <section className="container mx-auto px-4 py-12">
         <div className="mx-auto max-w-3xl">
-          <nav className="mb-6 text-sm text-muted-foreground" aria-label="Breadcrumb">
+          <nav
+            className="mb-6 text-sm text-muted-foreground"
+            aria-label="Breadcrumb"
+          >
             <ol className="flex flex-wrap gap-2">
               <li>
                 <Link href="/" className="hover:underline underline-offset-4">
@@ -92,7 +136,10 @@ export default async function BlogPostPage({ params }: { params: Params }) {
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link href="/blog" className="hover:underline underline-offset-4">
+                <Link
+                  href="/blog"
+                  className="hover:underline underline-offset-4"
+                >
                   Blog
                 </Link>
               </li>
@@ -107,9 +154,16 @@ export default async function BlogPostPage({ params }: { params: Params }) {
                 </Badge>
               ))}
             </div>
-            <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">{post.title}</h1>
-            <p className="mt-4 text-lg text-muted-foreground">{post.description}</p>
-            <time dateTime={post.dateISO} className="mt-4 block text-sm text-muted-foreground">
+            <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
+              {post.title}
+            </h1>
+            <p className="mt-4 text-lg text-muted-foreground">
+              {post.description}
+            </p>
+            <time
+              dateTime={post.dateISO}
+              className="mt-4 block text-sm text-muted-foreground"
+            >
               {new Date(post.dateISO).toLocaleDateString(undefined, {
                 year: "numeric",
                 month: "long",
@@ -123,7 +177,10 @@ export default async function BlogPostPage({ params }: { params: Params }) {
           </article>
 
           <div className="mt-10 border-t pt-6">
-            <Link href="/blog" className="text-primary hover:underline underline-offset-4 font-medium">
+            <Link
+              href="/blog"
+              className="text-primary hover:underline underline-offset-4 font-medium"
+            >
               ← Back to Blog
             </Link>
           </div>
@@ -132,4 +189,3 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     </div>
   );
 }
-

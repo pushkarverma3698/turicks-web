@@ -6,10 +6,10 @@ interface ImagePlaceholderProps {
   className?: string;
 }
 
-export function ImagePlaceholder({ 
-  label, 
+export function ImagePlaceholder({
+  label,
   aspectRatio = "wide",
-  className = "" 
+  className = "",
 }: ImagePlaceholderProps) {
   const uid = useId();
   const dotGridId = `${uid}-img-dot-grid`;
@@ -25,6 +25,8 @@ export function ImagePlaceholder({
 
   return (
     <div
+      role="img"
+      aria-label={label}
       className={[
         aspectClasses[aspectRatio],
         "group relative overflow-hidden rounded-2xl border bg-background/40",
@@ -39,7 +41,12 @@ export function ImagePlaceholder({
         aria-hidden="true"
       >
         <defs>
-          <pattern id={dotGridId} width="22" height="22" patternUnits="userSpaceOnUse">
+          <pattern
+            id={dotGridId}
+            width="22"
+            height="22"
+            patternUnits="userSpaceOnUse"
+          >
             <circle cx="2" cy="2" r="1.25" fill="currentColor" />
           </pattern>
           <linearGradient id={dotFadeId} x1="0" y1="0" x2="1" y2="0">

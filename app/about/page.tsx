@@ -1,14 +1,54 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Users, Target, Lightbulb, Heart } from "lucide-react";
 import { ImagePlaceholder } from "@/components/image-placeholder";
 import { DecorativeOrbs } from "@/components/decorative-orbs";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://turicks.com";
+
 export const metadata: Metadata = {
   title: "About Us - Turicks",
-  description: "Learn about Turicks, our mission, values, and the talented team building tailored SaaS solutions for organizations.",
+  description:
+    "Learn about Turicks, our mission, values, and the talented team building tailored SaaS solutions for organizations.",
+  keywords: [
+    "About Turicks",
+    "SaaS company",
+    "custom software",
+    "AI-driven solutions",
+    "team",
+    "mission and values",
+  ],
+  openGraph: {
+    title: "About Us - Turicks",
+    description:
+      "Learn about Turicks, our mission, values, and the talented team building tailored SaaS solutions for organizations.",
+    type: "website",
+    url: `${SITE_URL}/about`,
+    siteName: "Turicks",
+    images: [
+      {
+        url: `${SITE_URL}/globe.svg`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us - Turicks",
+    description:
+      "Learn about Turicks, our mission, values, and the talented team building tailored SaaS solutions for organizations.",
+    images: [`${SITE_URL}/globe.svg`],
+  },
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const teamMembers = [
@@ -38,22 +78,26 @@ const values = [
   {
     icon: Target,
     title: "Mission-Driven",
-    description: "We're committed to solving real problems and creating value for organizations.",
+    description:
+      "We're committed to solving real problems and creating value for organizations.",
   },
   {
     icon: Lightbulb,
     title: "Innovation First",
-    description: "We stay ahead of technology trends to deliver cutting-edge solutions.",
+    description:
+      "We stay ahead of technology trends to deliver cutting-edge solutions.",
   },
   {
     icon: Heart,
     title: "Client-Centric",
-    description: "Your success is our success. We prioritize understanding your needs.",
+    description:
+      "Your success is our success. We prioritize understanding your needs.",
   },
   {
     icon: Users,
     title: "Collaborative",
-    description: "We work closely with our clients throughout the entire development process.",
+    description:
+      "We work closely with our clients throughout the entire development process.",
   },
 ];
 
@@ -65,14 +109,14 @@ export default function AboutPage() {
         <DecorativeOrbs className="opacity-60" />
         <div className="container mx-auto px-4 relative">
           <div className="mx-auto max-w-3xl text-center">
-          <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            About Turicks
-          </h1>
-          <p className="text-lg text-muted-foreground md:text-xl">
-            We are a team of passionate developers, designers, and strategists
-            dedicated to building AI-driven, automated tailored SaaS solutions that transform how
-            organizations operate.
-          </p>
+            <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              About Turicks
+            </h1>
+            <p className="text-lg text-muted-foreground md:text-xl">
+              We are a team of passionate developers, designers, and strategists
+              dedicated to building AI-driven, automated tailored SaaS solutions
+              that transform how organizations operate.
+            </p>
           </div>
         </div>
       </section>
@@ -82,7 +126,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl">
             <div className="mb-8">
-              <ImagePlaceholder 
+              <ImagePlaceholder
                 label="Our Story Image - Office workspace, team meeting, or company culture photo. Should represent your organization's values, team collaboration, and work environment. Professional yet approachable."
                 aspectRatio="wide"
               />
@@ -93,8 +137,8 @@ export default function AboutPage() {
                 Turicks was founded with a simple yet powerful vision: to create
                 software solutions that truly fit the unique needs of each
                 organization. We recognized that many businesses were struggling
-                with generic, one-size-fits-all software that didn&apos;t align with
-                their specific workflows and requirements.
+                with generic, one-size-fits-all software that didn&apos;t align
+                with their specific workflows and requirements.
               </p>
               <p>
                 Starting as a small team of developers, we began by building
@@ -105,8 +149,8 @@ export default function AboutPage() {
                 satisfaction.
               </p>
               <p>
-                Today, we&apos;ve grown into a full-service agency that combines our
-                expertise in SaaS development with a deep understanding of
+                Today, we&apos;ve grown into a full-service agency that combines
+                our expertise in SaaS development with a deep understanding of
                 organizational needs. We continue to build both ready-made
                 solutions and custom projects, always maintaining our commitment
                 to quality, innovation, and client success.
@@ -153,7 +197,10 @@ export default function AboutPage() {
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {teamMembers.map((member) => (
-              <Card key={member.name} className="group hover:shadow-lg transition-shadow">
+              <Card
+                key={member.name}
+                className="group hover:shadow-lg transition-shadow"
+              >
                 <CardHeader>
                   <div className="flex flex-col items-center text-center gap-4">
                     <div className="relative">
@@ -183,7 +230,9 @@ export default function AboutPage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground text-center leading-relaxed">{member.bio}</p>
+                  <p className="text-sm text-muted-foreground text-center leading-relaxed">
+                    {member.bio}
+                  </p>
                 </CardContent>
               </Card>
             ))}
