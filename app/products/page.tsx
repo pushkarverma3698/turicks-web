@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, ArrowRight, Building2, Database, Shield, Users, Calendar, FileText, Play, Store, Sparkles } from "lucide-react";
 import { ImagePlaceholder } from "@/components/image-placeholder";
 import { VideoPreviewModal } from "@/components/video-preview-modal";
+import { DecorativeOrbs } from "@/components/decorative-orbs";
 
 const products = [
   {
@@ -87,8 +88,10 @@ export default function ProductsPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="mx-auto max-w-3xl text-center">
+      <section className="relative overflow-hidden py-20">
+        <DecorativeOrbs className="opacity-60" />
+        <div className="container mx-auto px-4 relative">
+          <div className="mx-auto max-w-3xl text-center">
           <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             Our SaaS Products
           </h1>
@@ -97,6 +100,7 @@ export default function ProductsPage() {
             needs. Each product is built with expertise and can be customized to
             fit your requirements.
           </p>
+          </div>
         </div>
       </section>
 

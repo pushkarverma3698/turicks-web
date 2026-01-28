@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Users, Target, Lightbulb, Heart } from "lucide-react";
 import { ImagePlaceholder } from "@/components/image-placeholder";
+import { DecorativeOrbs } from "@/components/decorative-orbs";
 
 export const metadata: Metadata = {
   title: "About Us - Turicks",
@@ -17,6 +18,18 @@ const teamMembers = [
     initials: "PD",
     bio: "I am a SaaS leader and CEO with 15+ years of experience scaling enterprise software businesses across global markets. I've built sales and partner ecosystems from the ground up, led multi-region expansions, and closed high-value enterprise deals across industries. At Turicks, my focus is on building a product-led, customer-first SaaS organization—one that combines strong technology with clear business outcomes. I believe the future of SaaS belongs to companies that execute relentlessly, listen deeply to customers, and scale with purpose.",
     imagePath: "/ceo.jpeg",
+  },
+  {
+    name: "Amit Pandey",
+    role: "CTO",
+    initials: "AP",
+    bio: "I lead engineering at Turicks, focusing on building reliable, scalable SaaS products. My work spans system architecture, product development, and delivering secure, maintainable solutions that help customers move faster with confidence.",
+  },
+  {
+    name: "Akash Bhatti",
+    role: "CIO",
+    initials: "AB",
+    bio: "I oversee information strategy at Turicks—aligning systems, data, and internal processes to support secure operations and scalable delivery. My focus is on making technology enable faster decisions, cleaner workflows, and better outcomes for customers.",
   },
   // Additional team members will be added soon
 ];
@@ -48,8 +61,10 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="mx-auto max-w-3xl text-center">
+      <section className="relative overflow-hidden py-20">
+        <DecorativeOrbs className="opacity-60" />
+        <div className="container mx-auto px-4 relative">
+          <div className="mx-auto max-w-3xl text-center">
           <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             About Turicks
           </h1>
@@ -58,6 +73,7 @@ export default function AboutPage() {
             dedicated to building AI-driven, automated tailored SaaS solutions that transform how
             organizations operate.
           </p>
+          </div>
         </div>
       </section>
 

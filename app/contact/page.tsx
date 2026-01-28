@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { DecorativeOrbs } from "@/components/decorative-orbs";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -56,8 +57,10 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="mx-auto max-w-3xl text-center">
+      <section className="relative overflow-hidden py-20">
+        <DecorativeOrbs className="opacity-60" />
+        <div className="container mx-auto px-4 relative">
+          <div className="mx-auto max-w-3xl text-center">
           <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             Get in Touch
           </h1>
@@ -65,6 +68,7 @@ export default function ContactPage() {
             Have a project in mind? Want to learn more about our products or
             services? We&apos;d love to hear from you.
           </p>
+          </div>
         </div>
       </section>
 

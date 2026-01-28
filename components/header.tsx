@@ -2,24 +2,32 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Products", href: "/products" },
     { name: "Services", href: "/services" },
+    { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
 
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="container mx-auto flex h-16 items-center justify-between px-4">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/40">
+      <nav className="container mx-auto flex h-18 items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
             Turicks
@@ -32,13 +40,20 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+              aria-current={isActive(item.href) ? "page" : undefined}
+              className={[
+                "relative rounded-full px-3 py-2 text-sm font-medium transition-colors",
+                "after:content-[''] after:absolute after:left-1/2 after:-bottom-0.5 after:h-[2px] after:w-0 after:-translate-x-1/2 after:rounded-full after:bg-gradient-to-r after:from-primary after:to-primary/60 after:transition-all after:duration-300",
+                isActive(item.href)
+                  ? "bg-muted/70 text-foreground font-semibold after:w-6"
+                  : "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:after:w-6",
+              ].join(" ")}
             >
               {item.name}
             </Link>
           ))}
-          <Button asChild>
-            <Link href="/contact">Get Started</Link>
+          <Button asChild className="rounded-full px-5">
+            <Link href="/contact">Book a Demo</Link>
           </Button>
         </div>
 
@@ -76,7 +91,13 @@ export function Header() {
                 >
                   <Link
                     href={item.href}
-                    className="block py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                    className={[
+                      "block rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                      isActive(item.href)
+                        ? "bg-muted/70 text-primary font-semibold"
+                        : "text-foreground/80 hover:text-foreground hover:bg-muted/60",
+                    ].join(" ")}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -89,7 +110,7 @@ export function Header() {
                 transition={{ delay: navItems.length * 0.05 }}
               >
                 <Button asChild className="w-full mt-4">
-                  <Link href="/contact">Get Started</Link>
+                  <Link href="/contact">Book a Demo</Link>
                 </Button>
               </motion.div>
             </div>

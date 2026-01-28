@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, ArrowRight, Code, Palette, Database, Smartphone, Cloud, Shield } from "lucide-react";
+import { DecorativeOrbs } from "@/components/decorative-orbs";
 
 export const metadata: Metadata = {
   title: "Our Services - Turicks",
@@ -47,12 +48,13 @@ const services = [
   },
   {
     icon: Palette,
-    title: "UI/UX Design",
-    description: "User-centered design that makes complex systems intuitive, accessible, and enjoyable to use.",
+    title: "UI/UX Services",
+    description: "Product UI/UX for SaaS: research, flows, wireframes, prototypes, and polished interfaces that users love.",
     features: [
       "User research & analysis",
       "Wireframing & prototyping",
       "Visual design",
+      "Design systems",
       "Usability testing",
     ],
   },
@@ -117,8 +119,10 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="mx-auto max-w-3xl text-center">
+      <section className="relative overflow-hidden py-20">
+        <DecorativeOrbs className="opacity-60" />
+        <div className="container mx-auto px-4 relative">
+          <div className="mx-auto max-w-3xl text-center">
           <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             Our Services
           </h1>
@@ -127,12 +131,14 @@ export default function ServicesPage() {
             SaaS solutions and tailored software for organizations. Whatever your
             requirements, we can build it.
           </p>
+          </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="border-y bg-muted/50 py-20">
-        <div className="container mx-auto px-4">
+      <section className="relative overflow-hidden py-20">
+        <DecorativeOrbs className="opacity-40" />
+        <div className="container mx-auto px-4 relative">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
               What We Offer
@@ -146,9 +152,12 @@ export default function ServicesPage() {
             {services.map((service) => {
               const Icon = service.icon;
               return (
-                <Card key={service.title} className="flex flex-col">
+                <Card
+                  key={service.title}
+                  className="group flex flex-col bg-background/40 backdrop-blur border-muted-foreground/15"
+                >
                   <CardHeader>
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <CardTitle>{service.title}</CardTitle>
