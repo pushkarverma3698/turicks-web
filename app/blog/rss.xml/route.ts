@@ -1,5 +1,7 @@
 import { getBlogPosts } from "@/lib/blog";
 
+export const dynamic = "force-static";
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://turicks.com";
 
 function escapeXml(s: string) {
@@ -45,4 +47,3 @@ export function GET() {
     },
   });
 }
-
