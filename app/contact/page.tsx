@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -24,13 +30,13 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    
+
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
+
     // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
@@ -46,7 +52,7 @@ export default function ContactPage() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
@@ -61,13 +67,13 @@ export default function ContactPage() {
         <DecorativeOrbs className="opacity-60" />
         <div className="container mx-auto px-4 relative">
           <div className="mx-auto max-w-3xl text-center">
-          <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            Get in Touch
-          </h1>
-          <p className="text-lg text-muted-foreground md:text-xl">
-            Have a project in mind? Want to learn more about our products or
-            services? We&apos;d love to hear from you.
-          </p>
+            <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              Get in Touch
+            </h1>
+            <p className="text-lg text-muted-foreground md:text-xl">
+              Have a project in mind? Want to learn more about our products or
+              services? We&apos;d love to hear from you.
+            </p>
           </div>
         </div>
       </section>
@@ -102,9 +108,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium">Phone</p>
-                    <p className="text-sm text-muted-foreground">
-                      +1 (555) 123-4567
-                    </p>
+                    <p className="text-sm text-muted-foreground">8660018590</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -130,7 +134,9 @@ export default function ContactPage() {
               <CardContent>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Monday - Friday</span>
+                    <span className="text-muted-foreground">
+                      Monday - Friday
+                    </span>
                     <span className="font-medium">9:00 AM - 6:00 PM</span>
                   </div>
                   <div className="flex justify-between">
@@ -152,8 +158,8 @@ export default function ContactPage() {
               <CardHeader>
                 <CardTitle>Send us a Message</CardTitle>
                 <CardDescription>
-                  Fill out the form below and we&apos;ll get back to you as soon as
-                  possible.
+                  Fill out the form below and we&apos;ll get back to you as soon
+                  as possible.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -164,7 +170,8 @@ export default function ContactPage() {
                       Message Sent!
                     </h3>
                     <p className="text-muted-foreground">
-                      Thank you for contacting us. We&apos;ll get back to you soon.
+                      Thank you for contacting us. We&apos;ll get back to you
+                      soon.
                     </p>
                   </div>
                 ) : (

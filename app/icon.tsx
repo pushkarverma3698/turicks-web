@@ -23,7 +23,14 @@ export default function Icon() {
         background: "transparent",
       }}
     >
-      <div style={{ position: "relative", width: 24, height: 24 }}>
+      <div
+        style={{
+          position: "relative",
+          width: 24,
+          height: 24,
+          display: "flex",
+        }}
+      >
         <div
           style={{
             position: "absolute",
