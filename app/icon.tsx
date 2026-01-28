@@ -10,7 +10,6 @@ export const size = {
 export const contentType = "image/png";
 
 export default function Icon() {
-  // Brand color used in navbar gradient (approx).
   const brand = "#7C3AED";
 
   return new ImageResponse(
@@ -22,15 +21,49 @@ export default function Icon() {
         alignItems: "center",
         justifyContent: "center",
         background: "transparent",
-        color: brand,
-        fontSize: 22,
-        fontWeight: 900,
-        fontFamily:
-          "system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif",
-        lineHeight: 1,
       }}
     >
-      T
+      <div style={{ position: "relative", width: 24, height: 24 }}>
+        <div
+          style={{
+            position: "absolute",
+            top: 2,
+            left: 1,
+            display: "flex",
+            gap: 2,
+          }}
+        >
+          <div
+            style={{ width: 6, height: 3, background: brand, opacity: 0.9 }}
+          />
+          <div
+            style={{ width: 6, height: 3, background: brand, opacity: 0.8 }}
+          />
+          <div
+            style={{ width: 6, height: 3, background: brand, opacity: 0.7 }}
+          />
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            top: 8,
+            left: 8,
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+          }}
+        >
+          <div
+            style={{ width: 6, height: 3, background: brand, opacity: 0.9 }}
+          />
+          <div
+            style={{ width: 6, height: 3, background: brand, opacity: 0.8 }}
+          />
+          <div
+            style={{ width: 6, height: 3, background: brand, opacity: 0.7 }}
+          />
+        </div>
+      </div>
     </div>,
     size,
   );
