@@ -4,6 +4,9 @@ export const dynamic = "force-static";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://turicks.com";
 
+// Required for static export
+export const dynamic = 'force-static';
+
 function escapeXml(s: string) {
   return s
     .replaceAll("&", "&amp;")
