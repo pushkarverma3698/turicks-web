@@ -17,7 +17,52 @@ interface MovingTilesProps {
   speedSeconds?: number;
 }
 
-function TilePill({ tile }: { tile: Tile }) {
+const tileThemes = [
+  {
+    surface:
+      "bg-gradient-to-br from-pink-500/30 via-fuchsia-500/20 to-indigo-500/30",
+    glow: "bg-fuchsia-400/30",
+    chip: "bg-white/75",
+    title: "bg-white/85",
+    line: "bg-white/50",
+    card: "bg-white/20",
+    accent: "bg-white/30",
+  },
+  {
+    surface:
+      "bg-gradient-to-br from-emerald-500/30 via-cyan-500/20 to-blue-500/30",
+    glow: "bg-cyan-400/30",
+    chip: "bg-white/80",
+    title: "bg-white/85",
+    line: "bg-white/50",
+    card: "bg-white/20",
+    accent: "bg-white/30",
+  },
+  {
+    surface:
+      "bg-gradient-to-br from-amber-500/30 via-orange-500/20 to-rose-500/30",
+    glow: "bg-orange-400/30",
+    chip: "bg-white/75",
+    title: "bg-white/85",
+    line: "bg-white/50",
+    card: "bg-white/20",
+    accent: "bg-white/30",
+  },
+  {
+    surface:
+      "bg-gradient-to-br from-violet-500/30 via-sky-500/20 to-teal-500/30",
+    glow: "bg-sky-400/30",
+    chip: "bg-white/80",
+    title: "bg-white/85",
+    line: "bg-white/50",
+    card: "bg-white/20",
+    accent: "bg-white/30",
+  },
+];
+
+function TilePill({ tile, index }: { tile: Tile; index: number }) {
+  const theme = tileThemes[index % tileThemes.length];
+
   return (
     <div className="w-[320px] rounded-3xl border bg-background/30 backdrop-blur transition-colors hover:bg-background/45">
       <div className="p-4">
@@ -34,29 +79,39 @@ function TilePill({ tile }: { tile: Tile }) {
           </div>
 
           {/* scaled preview */}
-          <div className="relative h-44 overflow-hidden bg-gradient-to-br from-blue-500/25 via-blue-600/15 to-blue-800/25">
-            {/* Placeholder mock (no iframe) so no URLs/emails ever render in the tile previews */}
+          <div className={`relative h-56 overflow-hidden ${theme.surface}`}>
             <div className="absolute inset-0">
-              <div className="absolute left-4 top-4 h-6 w-40 rounded-full bg-white/70" />
-              <div className="absolute left-4 top-14 h-3 w-56 rounded bg-white/45" />
-              <div className="absolute left-4 top-20 h-3 w-44 rounded bg-white/35" />
-              <div className="absolute right-4 top-12 h-16 w-16 rounded-2xl bg-white/30" />
-              <div className="absolute left-4 bottom-4 grid w-[70%] grid-cols-3 gap-2">
-                <div className="h-8 rounded-xl bg-white/25" />
-                <div className="h-8 rounded-xl bg-white/20" />
-                <div className="h-8 rounded-xl bg-white/15" />
+              <div className="absolute left-4 top-4 flex items-center gap-2">
+                <div className={`h-3 w-20 rounded-full ${theme.chip}`} />
+                <div className={`h-3 w-10 rounded-full ${theme.accent}`} />
               </div>
-              <div className="absolute -bottom-14 -right-14 h-40 w-40 rounded-full bg-blue-400/25 blur-2xl" />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
-          </div>
-        </div>
+              <div
+                className={`absolute left-4 top-12 h-5 w-40 rounded-full ${theme.title}`}
+              />
+              <div
+                className={`absolute left-4 top-20 h-3 w-56 rounded ${theme.line}`}
+              />
+              <div
+                className={`absolute left-4 top-[104px] h-3 w-44 rounded ${theme.line}`}
+              />
 
-        <div className="mt-3">
-          <p className="text-sm font-semibold">{tile.label}</p>
-          {tile.caption ? (
-            <p className="mt-1 text-sm text-muted-foreground">{tile.caption}</p>
-          ) : null}
+              <div className="absolute right-4 top-10 grid gap-2">
+                <div className={`h-8 w-20 rounded-2xl ${theme.card}`} />
+                <div className={`h-8 w-24 rounded-2xl ${theme.card}`} />
+              </div>
+
+              <div className="absolute left-4 bottom-6 grid w-[78%] grid-cols-3 gap-2">
+                <div className={`h-10 rounded-2xl ${theme.card}`} />
+                <div className={`h-10 rounded-2xl ${theme.card}`} />
+                <div className={`h-10 rounded-2xl ${theme.card}`} />
+              </div>
+
+              <div
+                className={`absolute -bottom-16 -right-10 h-44 w-44 rounded-full ${theme.glow} blur-2xl`}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -73,7 +128,9 @@ export function MovingTiles({
   const rowA = [...topRow, ...topRow];
   const rowB = [...bottomRow, ...bottomRow];
 
-  const style = { ["--marquee-duration" as any]: `${speedSeconds}s` } as CSSProperties;
+  const style = {
+    ["--marquee-duration" as any]: `${speedSeconds}s`,
+  } as CSSProperties;
 
   return (
     <section className="py-20">
@@ -81,7 +138,9 @@ export function MovingTiles({
         <div className="mb-10 text-center">
           <h2 className="mb-3 text-3xl font-bold md:text-4xl">{title}</h2>
           {subtitle ? (
-            <p className="mx-auto max-w-2xl text-muted-foreground">{subtitle}</p>
+            <p className="mx-auto max-w-2xl text-muted-foreground">
+              {subtitle}
+            </p>
           ) : null}
         </div>
 
@@ -99,7 +158,11 @@ export function MovingTiles({
               style={style}
             >
               {rowA.map((tile, idx) => (
-                <TilePill key={`${tile.label}-${idx}`} tile={tile} />
+                <TilePill
+                  key={`${tile.label}-${idx}`}
+                  tile={tile}
+                  index={idx}
+                />
               ))}
             </div>
 
@@ -108,7 +171,11 @@ export function MovingTiles({
               style={style}
             >
               {rowB.map((tile, idx) => (
-                <TilePill key={`${tile.label}-${idx}`} tile={tile} />
+                <TilePill
+                  key={`${tile.label}-${idx}`}
+                  tile={tile}
+                  index={idx + rowA.length}
+                />
               ))}
             </div>
           </div>
@@ -117,4 +184,3 @@ export function MovingTiles({
     </section>
   );
 }
-
