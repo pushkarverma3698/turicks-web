@@ -44,6 +44,7 @@ export function CompanyLogoChip({
   const [failed, setFailed] = useState(false);
   const slug = simpleIconsSlug[name];
   const src = slug ? cdnUrl(slug, color) : null;
+  const fallbackColor = `#${color}`;
 
   return (
     <div className="flex items-center gap-3 rounded-full border bg-transparent px-4 py-2 backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground/5 hover:shadow-md">
@@ -57,7 +58,10 @@ export function CompanyLogoChip({
             onError={() => setFailed(true)}
           />
         ) : (
-          <span className="text-[10px] font-semibold text-foreground/80">
+          <span
+            className="text-[10px] font-semibold"
+            style={{ color: fallbackColor }}
+          >
             {name
               .split(" ")
               .map((w) => w[0])
