@@ -21,10 +21,11 @@ export const metadata: Metadata = {
   keywords: [
     "About Turicks",
     "SaaS company",
-    "custom software",
+    "software development agency",
+    "custom software development",
+    "SaaS product team",
     "AI-driven solutions",
-    "team",
-    "mission and values",
+    "company mission and values",
   ],
   openGraph: {
     title: "About Us - Turicks",

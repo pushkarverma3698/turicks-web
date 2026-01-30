@@ -28,11 +28,15 @@ export const metadata: Metadata = {
     "We are a software development agency specializing in custom SaaS solutions, web applications, and tailored software for organizations.",
   keywords: [
     "custom SaaS development",
+    "SaaS development services",
+    "SaaS development company",
+    "software development agency",
     "web applications",
+    "web app development",
     "AI automation",
     "UI/UX services",
     "cloud infrastructure",
-    "security compliance",
+    "enterprise software development",
   ],
   openGraph: {
     title: "Our Services - Turicks",

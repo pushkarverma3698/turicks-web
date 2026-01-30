@@ -18,11 +18,13 @@ export const metadata: Metadata = {
     "Insights from Turicks on SaaS product delivery, automation, security, and building tailored software for organizations.",
   keywords: [
     "SaaS blog",
+    "SaaS growth",
+    "SaaS product development",
     "automation",
     "security",
     "AI agents",
-    "custom software",
-    "product delivery",
+    "custom software development",
+    "software delivery",
   ],
   openGraph: {
     title: "Blog - Turicks",

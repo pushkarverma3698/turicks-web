@@ -11,9 +11,11 @@ export const metadata: Metadata = {
     "contact Turicks",
     "book a demo",
     "request a quote",
-    "custom SaaS development",
+    "SaaS development company",
+    "custom software development",
+    "SaaS development services",
     "AI agents",
-    "software solutions",
+    "software development agency",
   ],
   openGraph: {
     title: "Contact Turicks - Book a Demo or Request a Quote",

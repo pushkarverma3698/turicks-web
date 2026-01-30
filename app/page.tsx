@@ -38,7 +38,6 @@ import {
   staggerItem,
 } from "@/components/animations/stagger-container";
 import { motion } from "framer-motion";
-import { ImagePlaceholder } from "@/components/image-placeholder";
 import { ClientMarquee } from "@/components/client-marquee";
 import { Parallax, ParallaxOrbs } from "@/components/parallax";
 import { DecorativeOrbs } from "@/components/decorative-orbs";
@@ -104,11 +103,15 @@ export default function Home() {
                     and scalable architecture.
                   </p>
                   <div className="mt-4">
-                    <ImagePlaceholder
-                      label="Web app preview (dashboard / workflow)"
-                      aspectRatio="wide"
-                      className="w-full"
-                    />
+                    <div className="relative aspect-[16/9] overflow-hidden rounded-xl border bg-muted/30">
+                      <Image
+                        src="/gif/web.gif"
+                        alt="Web application preview"
+                        fill
+                        className="object-cover"
+                        sizes="(min-width: 768px) 300px, 100vw"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="rounded-2xl border bg-background/60 p-5 backdrop-blur">
@@ -117,11 +120,15 @@ export default function Home() {
                     Wireframes, prototypes, design systems, and polished UI.
                   </p>
                   <div className="mt-4">
-                    <ImagePlaceholder
-                      label="UI kit / prototype preview"
-                      aspectRatio="wide"
-                      className="w-full"
-                    />
+                    <div className="relative aspect-[16/9] overflow-hidden rounded-xl border bg-muted/30">
+                      <Image
+                        src="/gif/ui-ux.gif"
+                        alt="UI and UX design preview"
+                        fill
+                        className="object-cover"
+                        sizes="(min-width: 768px) 300px, 100vw"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="rounded-2xl border bg-background/60 p-5 backdrop-blur">
@@ -131,11 +138,15 @@ export default function Home() {
                     offline-friendly workflows.
                   </p>
                   <div className="mt-4">
-                    <ImagePlaceholder
-                      label="Mobile app preview (screens / flow)"
-                      aspectRatio="wide"
-                      className="w-full"
-                    />
+                    <div className="relative aspect-[16/9] overflow-hidden rounded-xl border bg-muted/30">
+                      <Image
+                        src="/gif/app.gif"
+                        alt="Mobile application preview"
+                        fill
+                        className="object-cover"
+                        sizes="(min-width: 768px) 300px, 100vw"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

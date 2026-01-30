@@ -23,12 +23,16 @@ export const metadata: Metadata = {
   description:
     "We build custom SaaS products and provide development services for organizations. From school management systems to enterprise solutions, we create software that fits your unique requirements.",
   keywords: [
-    "SaaS",
-    "custom software",
+    "SaaS company",
+    "SaaS development company",
+    "SaaS development services",
+    "custom software development",
+    "software development agency",
+    "B2B SaaS",
+    "SaaS platform",
+    "enterprise software",
     "school management system",
-    "enterprise solutions",
-    "software development",
-    "agency",
+    "software solutions",
   ],
   openGraph: {
     title: "Turicks - Tailored SaaS Solutions",

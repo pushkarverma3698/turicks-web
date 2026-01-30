@@ -9,10 +9,13 @@ export const metadata: Metadata = {
     "Explore Turicks SaaS products including school management systems, enterprise platforms, HR tools, and AI-driven marketplaces.",
   keywords: [
     "SaaS products",
+    "SaaS software",
+    "SaaS platform",
     "school management system",
     "enterprise platform",
     "HR management system",
     "AI marketplace",
+    "B2B SaaS products",
   ],
   openGraph: {
     title: "SaaS Products - Turicks",

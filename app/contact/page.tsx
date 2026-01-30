@@ -30,14 +30,24 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    const subject = formData.subject || "New contact request";
+    const body = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Company: ${formData.company || "-"}`,
+      `Phone: ${formData.phone || "-"}`,
+      "",
+      formData.message,
+    ].join("\n");
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const mailto = `mailto:turicksai@gmail.com?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
 
+    window.location.href = mailto;
     setIsSubmitting(false);
     setIsSubmitted(true);
 
-    // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({
