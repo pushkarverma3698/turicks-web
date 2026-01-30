@@ -144,26 +144,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Client logos marquee */}
-      <ClientMarquee
-        title={null}
-        logos={[
-          "Shopify",
-          "Webflow",
-          "Snapchat",
-          "Giphy",
-          "Infosys",
-          "Scaler Academy",
-          "Dribbble",
-          "Genpact",
-          "Nagarro",
-          "SAP",
-          "Newgen Software",
-        ]}
-        logoColorHex="7c3aed"
-        speedSeconds={45}
-      />
-
       {/* Features Section */}
       <section className="relative overflow-hidden py-20">
         <DecorativeOrbs className="opacity-60" />
@@ -228,6 +208,26 @@ export default function Home() {
           </StaggerContainer>
         </div>
       </section>
+
+      {/* Client logos marquee */}
+      <ClientMarquee
+        title={null}
+        logos={[
+          "Shopify",
+          "Webflow",
+          "Snapchat",
+          "Giphy",
+          "Infosys",
+          "Scaler Academy",
+          "Dribbble",
+          "Genpact",
+          "Nagarro",
+          "SAP",
+          "Newgen Software",
+        ]}
+        logoColorHex="7c3aed"
+        speedSeconds={45}
+      />
 
       {/* Services Highlights Section */}
       <section className="relative overflow-hidden py-20" id="services">
@@ -597,49 +597,84 @@ export default function Home() {
           {
             label: "Homepage",
             path: "/",
-            caption: "Hero + services + product highlights",
+            media: {
+              type: "image",
+              src: "/web%20designs/10-ai-figma-plugins-every-ui-ux-designer-must-try-1024x683.webp",
+            },
           },
           {
             label: "Products",
             path: "/products",
-            caption: "SaaS products with detailed sections",
+            media: {
+              type: "image",
+              src: "/web%20designs/633e976403fd812be5340a14_Ant%20Design%20Mobile%20for%20Figma%201200%20px%20x%201600%20px.webp",
+            },
           },
           {
             label: "Services",
             path: "/services",
-            caption: "Development, UI/UX, DevOps, Security",
+            media: {
+              type: "image",
+              src: "/web%20designs/6829459639ea6ea5985b868e_279ac63f970fe3f341219d16447159b5_figma-frames.webp",
+            },
           },
           {
             label: "About",
             path: "/about",
-            caption: "Your story + team section",
+            media: {
+              type: "image",
+              src: "/web%20designs/blog_1754453553.png",
+            },
           },
           {
             label: "Contact",
             path: "/contact",
-            caption: "Book a demo / get in touch",
+            media: {
+              type: "image",
+              src: "/web%20designs/Design-system-08062023.png",
+            },
           },
         ]}
         bottomRow={[
           {
             label: "School Product",
             path: "/products#school-management",
-            caption: "Featured product section",
+            media: {
+              type: "image",
+              src: "/web%20designs/figma-design-systems.png",
+            },
           },
           {
             label: "Enterprise Product",
             path: "/products#enterprise-platform",
-            caption: "Enterprise management platform",
+            media: {
+              type: "image",
+              src: "/web%20designs/https___dev-to-uploads.s3.amazonaws.com_i_ix55oaldro35drafvuc6.webp",
+            },
           },
           {
             label: "HR Product",
             path: "/products#hr-management",
-            caption: "HR suite preview",
+            media: {
+              type: "image",
+              src: "/web%20designs/Mjs5JFKVxxGZWVhepNzgXEpI.avif",
+            },
           },
           {
-            label: "Team Section",
-            path: "/about#team",
-            caption: "Team cards preview",
+            label: "Design Kit",
+            path: "/products",
+            media: {
+              type: "image",
+              src: "/web%20designs/open-fashion-free-ecommerce-ui-kit-thumb.webp",
+            },
+          },
+          {
+            label: "Design Files",
+            path: "/products",
+            media: {
+              type: "image",
+              src: "/web%20designs/post_design-files.jpg",
+            },
           },
         ]}
       />
