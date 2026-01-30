@@ -183,7 +183,10 @@ export default function Home() {
                   <CardTitle>Custom Development</CardTitle>
                   <CardDescription>
                     Every solution is built specifically for your
-                    organization&apos;s unique needs and workflows.
+                    organization&apos;s unique needs and workflows. We design and
+                    build custom SaaS platforms, web applications, and
+                    automation-first systems that improve efficiency and user
+                    experience.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -197,7 +200,9 @@ export default function Home() {
                   <CardTitle>Industry Expertise</CardTitle>
                   <CardDescription>
                     Specialized knowledge in building SaaS products for
-                    education, healthcare, and enterprise sectors.
+                    education, healthcare, and enterprise sectors. We align
+                    UX, security, and compliance requirements with real-world
+                    operational needs for scalable software delivery.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -211,7 +216,9 @@ export default function Home() {
                   <CardTitle>Dedicated Support</CardTitle>
                   <CardDescription>
                     Ongoing maintenance, updates, and support to ensure your
-                    software continues to serve your organization.
+                    software continues to serve your organization. We provide
+                    reliable post-launch support, performance monitoring, and
+                    continuous improvements.
                   </CardDescription>
                 </CardHeader>
               </Card>
