@@ -118,9 +118,9 @@ export default function ContactPage() {
                   <div>
                     <p className="font-medium">Office</p>
                     <p className="text-sm text-muted-foreground">
-                      123 Tech Street
+                      Turicks Pvt Ltd, 3rd Floor Smartworks
                       <br />
-                      San Francisco, CA 94105
+                      Sector 54, Gurugram
                     </p>
                   </div>
                 </div>
