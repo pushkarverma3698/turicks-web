@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -357,11 +358,15 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-2 items-start">
           <div>
             <Parallax from={0} to={-40}>
-              <ImagePlaceholder
-                label="School Management System - Screenshot of dashboard (students/attendance/fees overview). Use a clean UI capture when available."
-                aspectRatio="wide"
-                className="w-full"
-              />
+              <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border bg-muted/20">
+                <Image
+                  src="/School/MOCKUPS-D1.png"
+                  alt="School Management System dashboard preview"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </Parallax>
           </div>
           <Card className="relative overflow-hidden">
@@ -630,11 +635,6 @@ export default function Home() {
             label: "HR Product",
             path: "/products#hr-management",
             caption: "HR suite preview",
-          },
-          {
-            label: "MSME Marketplace",
-            path: "/products#msme-marketplace",
-            caption: "Marketplace preview",
           },
           {
             label: "Team Section",

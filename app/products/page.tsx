@@ -2,11 +2,22 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, ArrowRight, Building2, Database, Shield, Users, Calendar, FileText, Play, Store, Sparkles } from "lucide-react";
-import { ImagePlaceholder } from "@/components/image-placeholder";
+import {
+  CheckCircle2,
+  ArrowRight,
+  Building2,
+  Database,
+  Shield,
+  Users,
+  Calendar,
+  FileText,
+  Play,
+  Sparkles,
+} from "lucide-react";
 import { VideoPreviewModal } from "@/components/video-preview-modal";
 import { DecorativeOrbs } from "@/components/decorative-orbs";
 
@@ -17,6 +28,13 @@ const products = [
     description: "A comprehensive platform designed specifically for educational institutions to manage students, staff, academics, and administrative tasks all in one place.",
     category: "Education",
     videoUrl: "", // Add YouTube/Vimeo URL here when available (e.g., "https://www.youtube.com/watch?v=VIDEO_ID")
+    images: [
+      "/School/MOCKUPS-D1.png",
+      "/School/MOCKUPS-D3.png",
+      "/School/MOCKUPS-D4.png",
+      "/School/MOCKUPS-D5.png",
+      "/School/MOCKUPS-D6.png",
+    ],
     features: [
       { icon: Users, text: "Student & Staff Management" },
       { icon: Calendar, text: "Attendance Tracking" },
@@ -35,6 +53,7 @@ const products = [
     description: "Scalable SaaS solution for large organizations requiring complex workflows, integrations, and enterprise-grade security.",
     category: "Enterprise",
     videoUrl: "", // Add YouTube/Vimeo URL here when available
+    images: ["/Admin%20panel/1.png", "/Admin%20panel/2.png"],
     features: [
       { icon: Database, text: "Custom Workflow Builder" },
       { icon: Building2, text: "Department Management" },
@@ -53,6 +72,12 @@ const products = [
     description: "Complete human resources solution for managing employees, payroll, recruitment, and organizational development.",
     category: "HR & Operations",
     videoUrl: "", // Add YouTube/Vimeo URL here when available
+    images: [
+      "/Hr/1%20(1).png",
+      "/Hr/14%20(1).png",
+      "/Hr/23%20(1).png",
+      "/Hr/29%20(1).png",
+    ],
     features: [
       { icon: Users, text: "Employee Database" },
       { icon: Calendar, text: "Leave & Attendance Management" },
@@ -62,24 +87,6 @@ const products = [
       { text: "Training & Development" },
     ],
     highlights: ["Comprehensive", "User-Friendly", "Integrated"],
-  },
-  {
-    id: "msme-marketplace",
-    name: "Marketplace for MSME",
-    description: "AI-powered marketplace platform designed specifically for Micro, Small, and Medium Enterprises to connect, trade, and grow their business digitally.",
-    category: "Marketplace",
-    videoUrl: "", // Add YouTube/Vimeo URL here when available
-    features: [
-      { icon: Store, text: "Digital Storefront Creation" },
-      { icon: Sparkles, text: "AI-Powered Product Recommendations" },
-      { icon: Database, text: "Inventory Management" },
-      { text: "Multi-vendor Support" },
-      { text: "Payment Gateway Integration" },
-      { text: "Order Management System" },
-      { text: "Analytics & Insights Dashboard" },
-      { text: "Mobile App for Buyers & Sellers" },
-    ],
-    highlights: ["AI-Driven", "MSME Focused", "Scalable"],
   },
 ];
 
@@ -120,11 +127,34 @@ export default function ProductsPage() {
               </div>
 
               <div className="mb-8">
-                <ImagePlaceholder 
-                  label={`${product.name} - Dashboard/Interface Screenshot. Show the main interface, key features, and user workflow. Should be professional, clean, and showcase the product's capabilities.`}
-                  aspectRatio="wide"
-                  className="w-full"
-                />
+                <div className="grid gap-4 lg:grid-cols-[2fr_1fr] lg:items-stretch">
+                  <div className="relative h-full min-h-[440px] overflow-hidden rounded-3xl border bg-muted/30">
+                    <Image
+                      src={product.images[0]}
+                      alt={`${product.name} interface preview`}
+                      fill
+                      className="h-full w-full"
+                      style={{ objectFit: "inherit" }}
+                      priority={product.id === "school-management"}
+                    />
+                  </div>
+                  <div className="grid gap-4 lg:grid-rows-2 lg:min-h-[440px]">
+                    {product.images.slice(1, 3).map((image) => (
+                      <div
+                        key={image}
+                        className="relative h-full min-h-[210px] overflow-hidden rounded-2xl border bg-muted/20"
+                      >
+                        <Image
+                          src={image}
+                          alt={`${product.name} screen`}
+                          fill
+                          className="h-full w-full"
+                          style={{ objectFit: "inherit" }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               <div className="grid gap-8 lg:grid-cols-3">
