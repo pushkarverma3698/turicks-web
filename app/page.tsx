@@ -25,12 +25,8 @@ import {
   Bot,
   Brain,
   Zap,
-  TrendingUp,
   BarChart3,
   Workflow,
-  Database,
-  Globe,
-  FileText,
 } from "lucide-react";
 import { FadeIn } from "@/components/animations/fade-in";
 import {
@@ -183,8 +179,8 @@ export default function Home() {
                   <CardTitle>Custom Development</CardTitle>
                   <CardDescription>
                     Every solution is built specifically for your
-                    organization&apos;s unique needs and workflows. We design and
-                    build custom SaaS platforms, web applications, and
+                    organization&apos;s unique needs and workflows. We design
+                    and build custom SaaS platforms, web applications, and
                     automation-first systems that improve efficiency and user
                     experience.
                   </CardDescription>
@@ -200,8 +196,8 @@ export default function Home() {
                   <CardTitle>Industry Expertise</CardTitle>
                   <CardDescription>
                     Specialized knowledge in building SaaS products for
-                    education, healthcare, and enterprise sectors. We align
-                    UX, security, and compliance requirements with real-world
+                    education, healthcare, and enterprise sectors. We align UX,
+                    security, and compliance requirements with real-world
                     operational needs for scalable software delivery.
                   </CardDescription>
                 </CardHeader>
@@ -527,7 +523,9 @@ export default function Home() {
                         Dynamic Tool Integration
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        Seamlessly orchestrate APIs, databases, and business applications with intelligent tool selection based on real-time context.
+                        Seamlessly orchestrate APIs, databases, and business
+                        applications with intelligent tool selection based on
+                        real-time context.
                       </p>
                     </div>
                   </div>
@@ -538,7 +536,8 @@ export default function Home() {
                         Real-time Context Awareness
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        Adapt to changing business conditions with context-aware decision-making that understands intent and environment.
+                        Adapt to changing business conditions with context-aware
+                        decision-making that understands intent and environment.
                       </p>
                     </div>
                   </div>
@@ -615,7 +614,7 @@ export default function Home() {
             path: "/",
             media: {
               type: "image",
-              src: "/web%20designs/10-ai-figma-plugins-every-ui-ux-designer-must-try-1024x683.webp",
+              src: "/web%20designs/1.png",
             },
           },
           {
@@ -623,7 +622,7 @@ export default function Home() {
             path: "/products",
             media: {
               type: "image",
-              src: "/web%20designs/633e976403fd812be5340a14_Ant%20Design%20Mobile%20for%20Figma%201200%20px%20x%201600%20px.webp",
+              src: "/web%20designs/2.webp",
             },
           },
           {
@@ -631,7 +630,7 @@ export default function Home() {
             path: "/services",
             media: {
               type: "image",
-              src: "/web%20designs/6829459639ea6ea5985b868e_279ac63f970fe3f341219d16447159b5_figma-frames.webp",
+              src: "/web%20designs/3.webp",
             },
           },
           {
@@ -639,7 +638,7 @@ export default function Home() {
             path: "/about",
             media: {
               type: "image",
-              src: "/web%20designs/blog_1754453553.png",
+              src: "/web%20designs/4.webp",
             },
           },
           {
@@ -647,7 +646,7 @@ export default function Home() {
             path: "/contact",
             media: {
               type: "image",
-              src: "/web%20designs/Design-system-08062023.png",
+              src: "/web%20designs/5.png",
             },
           },
         ]}
@@ -657,7 +656,7 @@ export default function Home() {
             path: "/products#school-management",
             media: {
               type: "image",
-              src: "/web%20designs/figma-design-systems.png",
+              src: "/web%20designs/6.png",
             },
           },
           {
@@ -665,7 +664,7 @@ export default function Home() {
             path: "/products#enterprise-platform",
             media: {
               type: "image",
-              src: "/web%20designs/https___dev-to-uploads.s3.amazonaws.com_i_ix55oaldro35drafvuc6.webp",
+              src: "/web%20designs/7.avif",
             },
           },
           {
@@ -673,7 +672,7 @@ export default function Home() {
             path: "/products#hr-management",
             media: {
               type: "image",
-              src: "/web%20designs/Mjs5JFKVxxGZWVhepNzgXEpI.avif",
+              src: "/web%20designs/8.webp",
             },
           },
           {
@@ -681,7 +680,7 @@ export default function Home() {
             path: "/products",
             media: {
               type: "image",
-              src: "/web%20designs/open-fashion-free-ecommerce-ui-kit-thumb.webp",
+              src: "/web%20designs/9.webp",
             },
           },
           {
@@ -689,7 +688,7 @@ export default function Home() {
             path: "/products",
             media: {
               type: "image",
-              src: "/web%20designs/post_design-files.jpg",
+              src: "/web%20designs/10.webp",
             },
           },
         ]}
