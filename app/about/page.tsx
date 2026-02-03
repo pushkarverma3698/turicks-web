@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Users, Target, Lightbulb, Heart } from "lucide-react";
-import { ImagePlaceholder } from "@/components/image-placeholder";
 import { DecorativeOrbs } from "@/components/decorative-orbs";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://turicks.com";
@@ -55,22 +54,40 @@ export const metadata: Metadata = {
 const teamMembers = [
   {
     name: "Partha Das",
-    role: "CEO & Co-Founder",
+    role: "CEO",
     initials: "PD",
-    bio: "I am a SaaS leader and CEO with 15+ years of experience scaling enterprise software businesses across global markets. I've built sales and partner ecosystems from the ground up, led multi-region expansions, and closed high-value enterprise deals across industries. At Turicks, my focus is on building a product-led, customer-first SaaS organization—one that combines strong technology with clear business outcomes. I believe the future of SaaS belongs to companies that execute relentlessly, listen deeply to customers, and scale with purpose.",
+    bio: "I am a SaaS leader and CEO with 15+ years of experience scaling enterprise software businesses across global markets. I've built sales and partner ecosystems, led multi-region expansions, and closed high-value enterprise deals. At Turicks, my focus is on building a product-led, customer-first SaaS organization that combines strong technology with clear business outcomes.",
     imagePath: "/ceo.jpeg",
   },
   {
-    name: "Amit Pandey",
+    name: "Sourav Kumar",
     role: "CTO",
-    initials: "AP",
-    bio: "I lead engineering at Turicks, focusing on building reliable, scalable SaaS products. My work spans system architecture, product development, and delivering secure, maintainable solutions that help customers move faster with confidence.",
+    initials: "SK",
+    bio: "I lead engineering at Turicks, focusing on building reliable, scalable SaaS products. My work spans system architecture, product development, and delivering secure, maintainable solutions. I specialize in cloud-native architectures, DevOps practices, and modern tech stacks including microservices and AI integration.",
   },
   {
     name: "Akash Bhatti",
-    role: "CIO",
+    role: "Designer",
     initials: "AB",
-    bio: "I oversee information strategy at Turicks—aligning systems, data, and internal processes to support secure operations and scalable delivery. My focus is on making technology enable faster decisions, cleaner workflows, and better outcomes for customers.",
+    bio: "I design user experiences and interfaces at Turicks, creating intuitive and visually appealing SaaS products. I specialize in UI/UX design, understanding user needs, and crafting seamless workflows that deliver exceptional user experiences.",
+  },
+  {
+    name: "Sumit Kumar",
+    role: "Product Consultant",
+    initials: "SM",
+    bio: "I specialize in selling software products and helping organizations find the right SaaS solutions. My expertise includes understanding client requirements, demonstrating product value, and closing deals that drive business growth.",
+  },
+  {
+    name: "Manish Sharma",
+    role: "Engineer",
+    initials: "MS",
+    bio: "I develop and maintain software solutions at Turicks, building robust and scalable applications. My expertise includes full-stack development, system architecture, and DevOps practices. I design scalable architectures, implement CI/CD pipelines, manage infrastructure, and ensure reliable deployments. I work on feature development and technical improvements to ensure our products are reliable, performant, and efficiently deployed.",
+  },
+  {
+    name: "Pushkar Verma",
+    role: "Engineer",
+    initials: "PV",
+    bio: "I build and optimize software systems at Turicks, focusing on creating efficient and maintainable code. My work involves developing new features, troubleshooting issues, and collaborating with the team to deliver high-quality solutions. I'm passionate about writing clean code, following best practices, and continuously learning new technologies to improve our products.",
   },
   // Additional team members will be added soon
 ];
@@ -118,45 +135,6 @@ export default function AboutPage() {
               dedicated to building AI-driven, automated tailored SaaS solutions
               that transform how organizations operate.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Story Section */}
-      <section className="border-y bg-muted/50 py-20">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl">
-            <div className="mb-8">
-              <ImagePlaceholder
-                label="Our Story Image - Office workspace, team meeting, or company culture photo. Should represent your organization's values, team collaboration, and work environment. Professional yet approachable."
-                aspectRatio="wide"
-              />
-            </div>
-            <h2 className="mb-6 text-3xl font-bold">Our Story</h2>
-            <div className="space-y-4 text-muted-foreground">
-              <p>
-                Turicks was founded with a simple yet powerful vision: to create
-                software solutions that truly fit the unique needs of each
-                organization. We recognized that many businesses were struggling
-                with generic, one-size-fits-all software that didn&apos;t align
-                with their specific workflows and requirements.
-              </p>
-              <p>
-                Starting as a small team of developers, we began by building
-                custom solutions for local organizations, including a
-                comprehensive school management system. The success of these
-                projects reinforced our belief that tailored software could
-                significantly improve operational efficiency and user
-                satisfaction.
-              </p>
-              <p>
-                Today, we&apos;ve grown into a full-service agency that combines
-                our expertise in SaaS development with a deep understanding of
-                organizational needs. We continue to build both ready-made
-                solutions and custom projects, always maintaining our commitment
-                to quality, innovation, and client success.
-              </p>
-            </div>
           </div>
         </div>
       </section>

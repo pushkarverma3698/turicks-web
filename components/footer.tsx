@@ -63,15 +63,15 @@ export function Footer() {
       </div>
 
       <div className="container mx-auto px-4 py-12 relative">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-2">
             <Link href="/" className="flex items-center space-x-2">
               <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                 Turicks
               </span>
             </Link>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground max-w-sm">
               Building tailored SaaS solutions for organizations. We create
               custom software that fits your unique requirements.
             </p>
@@ -95,26 +95,24 @@ export function Footer() {
           </div>
 
           {/* Links */}
-          <nav aria-label="Footer">
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
-              {Object.entries(footerLinks).map(([title, links]) => (
-                <div key={title} className="space-y-4">
-                  <h3 className="text-sm font-semibold">{title}</h3>
-                  <ul className="space-y-2">
-                    {links.map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          href={link.href}
-                          className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:underline underline-offset-4"
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+          <nav aria-label="Footer" className="grid grid-cols-2 gap-8 lg:col-span-3 lg:grid-cols-4">
+            {Object.entries(footerLinks).map(([title, links]) => (
+              <div key={title} className="space-y-3">
+                <h3 className="text-sm font-semibold text-foreground">{title}</h3>
+                <ul className="space-y-2.5">
+                  {links.map((link) => (
+                    <li key={link.name}>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:underline underline-offset-4"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </nav>
         </div>
 

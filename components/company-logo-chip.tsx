@@ -3,30 +3,26 @@
 import { useState } from "react";
 
 export type CompanyLogoName =
-  | "Shopify"
-  | "Webflow"
-  | "Snapchat"
-  | "Giphy"
-  | "Infosys"
-  | "Scaler Academy"
-  | "Dribbble"
-  | "Genpact"
-  | "Nagarro"
-  | "SAP"
-  | "Newgen Software";
+  | "HFN"
+  | "ContactME"
+  | "ArcsInfotech"
+  | "HybrowLabs"
+  | "WeWork"
+  | "MadOverGames"
+  | "VitalConnect24"
+  | "Jugnoo"
+  | "NrichLearning";
 
 const simpleIconsSlug: Record<CompanyLogoName, string | null> = {
-  Shopify: "shopify",
-  Webflow: "webflow",
-  Snapchat: "snapchat",
-  Giphy: "giphy",
-  Infosys: "infosys",
-  "Scaler Academy": null,
-  Dribbble: "dribbble",
-  Genpact: "genpact",
-  Nagarro: "nagarro",
-  SAP: "sap",
-  "Newgen Software": null,
+  HFN: null,
+  ContactME: null,
+  ArcsInfotech: null,
+  HybrowLabs: null,
+  WeWork: "wework",
+  MadOverGames: null,
+  VitalConnect24: null,
+  Jugnoo: null,
+  NrichLearning: null,
 };
 
 function cdnUrl(slug: string, colorHexNoHash: string) {

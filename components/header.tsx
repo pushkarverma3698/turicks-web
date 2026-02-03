@@ -31,23 +31,11 @@ export function Header() {
       <nav className="container mx-auto flex h-18 items-center justify-between px-4 py-3">
         <Link
           href="/"
-          className="flex items-center space-x-1"
+          className="flex items-center"
           aria-label="Turicks home"
         >
-          <span className="relative flex h-8 w-8 items-center justify-center">
-            <span className="absolute top-1 left-1/2 -translate-x-1/2 flex gap-0.5">
-              <span className="h-1.5 w-2 rounded-none bg-primary/90 shadow-sm" />
-              <span className="h-1.5 w-2 rounded-none bg-primary/80 shadow-sm" />
-              <span className="h-1.5 w-2 rounded-none bg-primary/70 shadow-sm" />
-            </span>
-            <span className="absolute top-3 left-1/2 -translate-x-1/2 flex flex-col gap-0.5">
-              <span className="h-1.5 w-2 rounded-none bg-primary/90 shadow-sm" />
-              <span className="h-1.5 w-2 rounded-none bg-primary/80 shadow-sm" />
-              <span className="h-1.5 w-2 rounded-none bg-primary/70 shadow-sm" />
-            </span>
-          </span>
-          <span className="relative left-[-13px] top-[8px] text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            uricks
+          <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            Turicks
           </span>
         </Link>
 

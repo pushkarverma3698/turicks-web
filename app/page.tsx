@@ -231,17 +231,15 @@ export default function Home() {
       <ClientMarquee
         title={null}
         logos={[
-          "Shopify",
-          "Webflow",
-          "Snapchat",
-          "Giphy",
-          "Infosys",
-          "Scaler Academy",
-          "Dribbble",
-          "Genpact",
-          "Nagarro",
-          "SAP",
-          "Newgen Software",
+          "HFN",
+          "ContactME",
+          "ArcsInfotech",
+          "HybrowLabs",
+          "WeWork",
+          "MadOverGames",
+          "VitalConnect24",
+          "Jugnoo",
+          "NrichLearning",
         ]}
         logoColorHex="7c3aed"
         speedSeconds={45}
