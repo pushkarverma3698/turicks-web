@@ -73,9 +73,17 @@ const teamMembers = [
   },
   {
     name: "Sumit Kumar",
-    role: "Product Consultant",
+    role: "Business Head",
     initials: "SM",
-    bio: "I specialize in selling software products and helping organizations find the right SaaS solutions. My expertise includes understanding client requirements, demonstrating product value, and closing deals that drive business growth.",
+    bio: "I lead business strategy at Turicks, focusing on growth partnerships, enterprise relationships, and go-to-market execution. My work centers on aligning product value with customer needs and driving sustainable revenue.",
+    imagePath: "/sumit%20business%20head.jpeg",
+  },
+  {
+    name: "Omkar",
+    role: "Digital Marketing Head",
+    initials: "OM",
+    bio: "I lead digital marketing at Turicks with 10 years of experience driving growth through SEO, performance campaigns, and content strategy. My focus is on building the brand, generating qualified demand, and aligning marketing execution with product outcomes.",
+    imagePath: "/omi%20digital%20marketing.jpeg",
   },
   {
     name: "Manish Sharma",
