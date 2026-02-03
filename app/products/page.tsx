@@ -25,7 +25,8 @@ const products = [
   {
     id: "school-management",
     name: "School Management System",
-    description: "A comprehensive platform designed specifically for educational institutions to manage students, staff, academics, and administrative tasks all in one place.",
+    description:
+      "A comprehensive platform designed specifically for educational institutions to manage students, staff, academics, and administrative tasks all in one place.",
     category: "Education",
     videoUrl: "", // Add YouTube/Vimeo URL here when available (e.g., "https://www.youtube.com/watch?v=VIDEO_ID")
     images: [
@@ -50,7 +51,8 @@ const products = [
   {
     id: "enterprise-platform",
     name: "Enterprise Management Platform",
-    description: "Scalable SaaS solution for large organizations requiring complex workflows, integrations, and enterprise-grade security.",
+    description:
+      "Scalable SaaS solution for large organizations requiring complex workflows, integrations, and enterprise-grade security.",
     category: "Enterprise",
     videoUrl: "", // Add YouTube/Vimeo URL here when available
     images: ["/Admin%20panel/1.png", "/Admin%20panel/2.png"],
@@ -69,15 +71,11 @@ const products = [
   {
     id: "hr-management",
     name: "HR Management System",
-    description: "Complete human resources solution for managing employees, payroll, recruitment, and organizational development.",
+    description:
+      "Complete human resources solution for managing employees, payroll, recruitment, and organizational development.",
     category: "HR & Operations",
     videoUrl: "", // Add YouTube/Vimeo URL here when available
-    images: [
-      "/Hr/1%20(1).png",
-      "/Hr/14%20(1).png",
-      "/Hr/23%20(1).png",
-      "/Hr/29%20(1).png",
-    ],
+    images: ["/Hr/1%20(1).png", "/Hr/14%20(1).png", "/Hr/29%20(1).png"],
     features: [
       { icon: Users, text: "Employee Database" },
       { icon: Calendar, text: "Leave & Attendance Management" },
@@ -91,7 +89,10 @@ const products = [
 ];
 
 export default function ProductsPage() {
-  const [selectedVideo, setSelectedVideo] = useState<{ url: string; title: string } | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<{
+    url: string;
+    title: string;
+  } | null>(null);
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -99,14 +100,14 @@ export default function ProductsPage() {
         <DecorativeOrbs className="opacity-60" />
         <div className="container mx-auto px-4 relative">
           <div className="mx-auto max-w-3xl text-center">
-          <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            Our SaaS Products
-          </h1>
-          <p className="text-lg text-muted-foreground md:text-xl">
-            Explore our ready-made solutions designed for specific organizational
-            needs. Each product is built with expertise and can be customized to
-            fit your requirements.
-          </p>
+            <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              Our SaaS Products
+            </h1>
+            <p className="text-lg text-muted-foreground md:text-xl">
+              Explore our ready-made solutions designed for specific
+              organizational needs. Each product is built with expertise and can
+              be customized to fit your requirements.
+            </p>
           </div>
         </div>
       </section>
@@ -119,7 +120,9 @@ export default function ProductsPage() {
               <div className="mb-8">
                 <div className="mb-4 flex items-center gap-4">
                   <Badge variant="secondary">{product.category}</Badge>
-                  <h2 className="text-3xl font-bold md:text-4xl">{product.name}</h2>
+                  <h2 className="text-3xl font-bold md:text-4xl">
+                    {product.name}
+                  </h2>
                 </div>
                 <p className="max-w-3xl text-lg text-muted-foreground">
                   {product.description}
@@ -199,12 +202,15 @@ export default function ProductsPage() {
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
-                    <Button 
-                      variant="outline" 
+                    <Button
+                      variant="outline"
                       className="w-full"
                       onClick={() => {
                         if (product.videoUrl) {
-                          setSelectedVideo({ url: product.videoUrl, title: product.name });
+                          setSelectedVideo({
+                            url: product.videoUrl,
+                            title: product.name,
+                          });
                         }
                       }}
                       disabled={!product.videoUrl}
@@ -229,17 +235,26 @@ export default function ProductsPage() {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
             <Sparkles className="h-5 w-5 text-primary" />
-            <span className="text-sm font-semibold text-primary">Custom Solutions</span>
+            <span className="text-sm font-semibold text-primary">
+              Custom Solutions
+            </span>
           </div>
           <h2 className="mb-4 text-3xl font-bold md:text-4xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
             Need Something Custom?
           </h2>
           <p className="mb-8 mx-auto max-w-2xl text-muted-foreground text-lg">
-            Don&apos;t see exactly what you need? We specialize in building <span className="font-semibold text-foreground">AI-driven, automated</span> tailored
-            solutions based on your specific requirements. Let&apos;s discuss your
-            project.
+            Don&apos;t see exactly what you need? We specialize in building{" "}
+            <span className="font-semibold text-foreground">
+              AI-driven, automated
+            </span>{" "}
+            tailored solutions based on your specific requirements. Let&apos;s
+            discuss your project.
           </p>
-          <Button asChild size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg shadow-primary/20">
+          <Button
+            asChild
+            size="lg"
+            className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg shadow-primary/20"
+          >
             <Link href="/services">
               Explore Our Services
               <ArrowRight className="ml-2 h-4 w-4" />
