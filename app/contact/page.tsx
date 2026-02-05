@@ -15,6 +15,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import { DecorativeOrbs } from "@/components/decorative-orbs";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://turicks.com";
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -41,7 +43,7 @@ export default function ContactPage() {
     ].join("\n");
 
     const mailto = `mailto:turicksai@gmail.com?subject=${encodeURIComponent(
-      subject,
+      subject
     )}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailto;
@@ -62,7 +64,7 @@ export default function ContactPage() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({
       ...formData,
@@ -70,8 +72,31 @@ export default function ContactPage() {
     });
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_URL}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contact",
+        item: `${SITE_URL}/contact`,
+      },
+    ],
+  };
+
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
         <DecorativeOrbs className="opacity-60" />

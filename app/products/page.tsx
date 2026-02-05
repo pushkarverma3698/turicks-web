@@ -21,6 +21,8 @@ import {
 import { VideoPreviewModal } from "@/components/video-preview-modal";
 import { DecorativeOrbs } from "@/components/decorative-orbs";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://turicks.com";
+
 const products = [
   {
     id: "school-management",
@@ -93,8 +95,53 @@ export default function ProductsPage() {
     url: string;
     title: string;
   } | null>(null);
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_URL}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Products",
+        item: `${SITE_URL}/products`,
+      },
+    ],
+  };
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: products.map((product, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Product",
+        name: product.name,
+        description: product.description,
+        category: product.category,
+        url: `${SITE_URL}/products#${product.id}`,
+        image: `${SITE_URL}${product.images[0]}`,
+      },
+    })),
+  };
+
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
         <DecorativeOrbs className="opacity-60" />
@@ -131,7 +178,7 @@ export default function ProductsPage() {
 
               <div className="mb-8">
                 <div className="grid gap-4 lg:grid-cols-[2fr_1fr] lg:items-stretch">
-                  <div className="relative h-full min-h-[440px] overflow-hidden rounded-3xl border bg-muted/30">
+                  <div className="relative h-full min-h-[210px] lg:min-h-[440px] overflow-hidden rounded-3xl border bg-muted/30">
                     <Image
                       src={product.images[0]}
                       alt={`${product.name} interface preview`}
@@ -202,6 +249,13 @@ export default function ProductsPage() {
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
+                    {product.id === "school-management" ? (
+                      <Button asChild variant="outline" className="w-full">
+                        <Link href="/landing/digitize-your-school-in-14-days">
+                          Digitize Your School in 14 Days
+                        </Link>
+                      </Button>
+                    ) : null}
                     <Button
                       variant="outline"
                       className="w-full"

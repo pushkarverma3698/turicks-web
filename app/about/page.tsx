@@ -128,8 +128,31 @@ const values = [
 ];
 
 export default function AboutPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_URL}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About",
+        item: `${SITE_URL}/about`,
+      },
+    ],
+  };
+
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
         <DecorativeOrbs className="opacity-60" />
@@ -139,9 +162,13 @@ export default function AboutPage() {
               About Turicks
             </h1>
             <p className="text-lg text-muted-foreground md:text-xl">
-              We are a team of passionate developers, designers, and strategists
-              dedicated to building AI-driven, automated tailored SaaS solutions
-              that transform how organizations operate.
+              Turicks is a SaaS development partner for startups and growing
+              businesses. We help founders turn ideas into scalable digital
+              products by handling design, development, cloud infrastructure,
+              and long-term support — all under one roof.
+            </p>
+            <p className="mt-4 text-base text-foreground/80 md:text-lg">
+              Think of us as your on-demand product engineering team.
             </p>
           </div>
         </div>

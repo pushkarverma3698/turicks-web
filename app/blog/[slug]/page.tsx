@@ -54,9 +54,9 @@ export async function generateMetadata({
 }
 
 function renderBlocks(content: string) {
-  const blocks = content
-    .trim()
-    .split("\n\n")
+  const normalized = content.replace(/\r\n/g, "\n").trim();
+  const blocks = normalized
+    .split(/\n\s*\n/)
     .map((b) => b.trim())
     .filter(Boolean);
 
@@ -66,6 +66,8 @@ function renderBlocks(content: string) {
       .map((l) => l.trim())
       .filter(Boolean);
     const isList = lines.length > 1 && lines.every((l) => l.startsWith("- "));
+    const isOrderedList =
+      lines.length > 1 && lines.every((l) => /^\d+\.\s+/.test(l));
 
     if (isList) {
       return (
@@ -76,6 +78,42 @@ function renderBlocks(content: string) {
             </li>
           ))}
         </ul>
+      );
+    }
+
+    if (isOrderedList) {
+      return (
+        <ol key={idx} className="my-4 list-decimal pl-6 text-muted-foreground">
+          {lines.map((l) => (
+            <li key={l} className="text-foreground/90">
+              {l.replace(/^\d+\.\s+/, "")}
+            </li>
+          ))}
+        </ol>
+      );
+    }
+
+    if (block.startsWith("### ")) {
+      return (
+        <h3 key={idx} className="mt-8 text-2xl font-semibold text-foreground">
+          {block.replace(/^###\s+/, "")}
+        </h3>
+      );
+    }
+
+    if (block.startsWith("## ")) {
+      return (
+        <h2 key={idx} className="mt-8 text-3xl font-semibold text-foreground">
+          {block.replace(/^##\s+/, "")}
+        </h2>
+      );
+    }
+
+    if (block.startsWith("# ")) {
+      return (
+        <h2 key={idx} className="mt-8 text-3xl font-semibold text-foreground">
+          {block.replace(/^#\s+/, "")}
+        </h2>
       );
     }
 
@@ -115,11 +153,40 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     },
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_URL}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${SITE_URL}/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: `${SITE_URL}/blog/${post.slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="flex flex-col">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <section className="container mx-auto px-4 py-12">

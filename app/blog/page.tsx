@@ -53,9 +53,31 @@ export const metadata: Metadata = {
 
 export default function BlogIndexPage() {
   const posts = getBlogPosts();
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_URL}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${SITE_URL}/blog`,
+      },
+    ],
+  };
 
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <section className="container mx-auto px-4 py-20">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">

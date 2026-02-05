@@ -14,8 +14,10 @@ export function Header() {
 
   const navItems = [
     { name: "Home", href: "/" },
+    { name: "Solutions", href: "/solutions" },
     { name: "Products", href: "/products" },
     { name: "Services", href: "/services" },
+    { name: "Case Studies", href: "/case-studies" },
     { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
@@ -29,11 +31,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/40">
       <nav className="container mx-auto flex h-18 items-center justify-between px-4 py-3">
-        <Link
-          href="/"
-          className="flex items-center"
-          aria-label="Turicks home"
-        >
+        <Link href="/" className="flex items-center" aria-label="Turicks home">
           <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
             Turicks
           </span>

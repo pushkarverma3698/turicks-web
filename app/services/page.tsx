@@ -181,8 +181,51 @@ const processSteps = [
 ];
 
 export default function ServicesPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_URL}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: `${SITE_URL}/services`,
+      },
+    ],
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Custom SaaS Development",
+    serviceType: "Custom SaaS Development",
+    provider: {
+      "@type": "Organization",
+      name: "Turicks",
+      url: SITE_URL,
+    },
+    areaServed: "Global",
+    url: `${SITE_URL}/services`,
+    description:
+      "Custom SaaS development, web applications, UI/UX services, cloud infrastructure, and security for organizations.",
+  };
+
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
         <DecorativeOrbs className="opacity-60" />
@@ -244,6 +287,53 @@ export default function ServicesPage() {
                 </Card>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* The Big Truth */}
+      <section className="container mx-auto px-4 py-20">
+        <div className="mx-auto max-w-4xl">
+          <div className="rounded-3xl border bg-background/60 backdrop-blur p-8 md:p-10">
+            <div className="mb-6">
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border bg-muted px-4 py-2 text-sm">
+                <span>Trust Signals</span>
+              </div>
+              <h2 className="text-3xl font-bold md:text-4xl">The Big Truth</h2>
+              <p className="mt-3 text-muted-foreground">
+                Clients choose based on understanding, trust, and proof. Price
+                matters least when trust is high.
+              </p>
+            </div>
+            <div className="overflow-hidden rounded-2xl border">
+              <div className="grid grid-cols-1 sm:grid-cols-[1.2fr_0.8fr] divide-y sm:divide-y-0 sm:divide-x bg-background/80">
+                <div className="p-4 text-sm font-semibold">Factor</div>
+                <div className="p-4 text-sm font-semibold">Importance</div>
+                {[
+                  {
+                    factor: "Do they understand my problem?",
+                    stars: "⭐⭐⭐⭐⭐",
+                  },
+                  { factor: "Can I trust them?", stars: "⭐⭐⭐⭐⭐" },
+                  { factor: "Do they have proof?", stars: "⭐⭐⭐⭐" },
+                  { factor: "Are they cheapest?", stars: "⭐" },
+                ].map((row) => (
+                  <div
+                    key={row.factor}
+                    className="grid grid-cols-1 sm:grid-cols-[1.2fr_0.8fr] border-t"
+                  >
+                    <div className="p-4 text-sm text-foreground/90">
+                      {row.factor}
+                    </div>
+                    <div className="p-4 text-sm">{row.stars}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <p className="mt-6 text-sm text-muted-foreground">
+              We focus on clarity, proof, and long‑term partnership so you can
+              choose with confidence.
+            </p>
           </div>
         </div>
       </section>

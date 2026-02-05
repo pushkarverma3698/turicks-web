@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
@@ -40,9 +41,39 @@ import { DecorativeOrbs } from "@/components/decorative-orbs";
 import { DecorativeVectors } from "@/components/decorative-vectors";
 import { MovingTiles } from "@/components/moving-tiles";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://turicks.com";
+
 export default function Home() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_URL}/`,
+      },
+    ],
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Turicks",
+    url: SITE_URL,
+  };
+
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 md:py-28">
         <ParallaxOrbs />
@@ -51,20 +82,23 @@ export default function Home() {
           <FadeIn className="mx-auto max-w-3xl text-center" y={0}>
             <div className="mb-6 inline-flex items-center rounded-full border bg-muted/60 px-4 py-2 text-sm">
               <Rocket className="mr-2 h-4 w-4" />
-              <span>
-                AI-driven SaaS products + custom software for organizations
-              </span>
+              <span>Your SaaS development partner</span>
             </div>
             <h1 className="mb-6 pb-3 text-4xl font-bold tracking-tight leading-tight sm:text-5xl md:text-6xl text-balance break-words overflow-visible">
-              Tailored SaaS Solutions
+              From Idea to Live Product — We Build Software That Drives Real
+              Business Growth.
               <span className="block bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent pb-[0.1em]">
-                For Your Organization
+                Turicks: Your SaaS Development Partner
               </span>
             </h1>
-            <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-              Production-ready software you can buy, plus custom development for
-              your exact workflows. Fast delivery, clean UX, and long-term
-              support.
+            <p className="mb-6 text-lg text-muted-foreground md:text-xl">
+              Turicks is a SaaS development partner for startups and growing
+              businesses. We help founders turn ideas into scalable digital
+              products by handling design, development, cloud infrastructure,
+              and long-term support — all under one roof.
+            </p>
+            <p className="mb-8 text-base text-foreground/80 md:text-lg">
+              Think of us as your on-demand product engineering team.
             </p>
             <motion.div
               className="flex flex-col justify-center gap-3 sm:flex-row"
@@ -240,6 +274,221 @@ export default function Home() {
         logoColorHex="7c3aed"
         speedSeconds={45}
       />
+
+      {/* Founder Story */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border bg-muted/20">
+              <Image
+                src="/ceo.jpeg"
+                alt="Partha Das, Founder & CEO of Turicks"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border bg-muted px-4 py-2 text-sm">
+                <Users className="h-4 w-4" />
+                <span>Founder Story</span>
+              </div>
+              <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+                People hire people, not just vendors
+              </h2>
+              <p className="text-muted-foreground">
+                Turicks was founded to help organizations replace brittle
+                spreadsheets and patchwork tools with tailored SaaS products
+                that actually match how teams work. We bring deep product
+                strategy, pragmatic engineering, and long‑term partnership to
+                every engagement.
+              </p>
+              <div className="mt-6">
+                <Button asChild variant="outline">
+                  <Link href="/about">Meet the team</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technologies */}
+      <section className="border-y bg-muted/30 py-16">
+        <div className="container mx-auto px-4">
+          <div className="mb-8 text-center">
+            <h2 className="text-2xl font-bold md:text-3xl">
+              Technologies We Work With
+            </h2>
+            <p className="mt-2 text-muted-foreground">
+              Modern stacks for scalable SaaS, mobile apps, and AI automation.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              "Next.js",
+              "React",
+              "Node.js",
+              "TypeScript",
+              "Python",
+              "PostgreSQL",
+              "AWS",
+              "Docker",
+              "Kubernetes",
+              "Figma",
+            ].map((tech) => (
+              <Badge
+                key={tech}
+                variant="secondary"
+                className="px-4 py-2 text-sm"
+              >
+                {tech}
+              </Badge>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="mb-10 text-center">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border bg-muted px-4 py-2 text-sm">
+              <Workflow className="h-4 w-4" />
+              <span>Process</span>
+            </div>
+            <h2 className="text-3xl font-bold md:text-4xl">
+              Idea → Design → Build → Launch → Support
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+              A clear, proven delivery flow that minimizes risk and accelerates
+              outcomes.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+            {[
+              {
+                title: "Idea",
+                description: "Discovery workshops, goals, and success metrics.",
+              },
+              {
+                title: "Design",
+                description: "UX flows, UI systems, and rapid prototyping.",
+              },
+              {
+                title: "Build",
+                description: "Agile development with clean architecture.",
+              },
+              {
+                title: "Launch",
+                description: "QA, deployment, and go‑live readiness.",
+              },
+              {
+                title: "Support",
+                description: "Monitoring, iteration, and ongoing improvement.",
+              },
+            ].map((step, idx) => (
+              <Card key={step.title} className="h-full bg-background/50">
+                <CardHeader>
+                  <div className="text-sm font-semibold text-primary">
+                    {String(idx + 1).padStart(2, "0")}
+                  </div>
+                  <CardTitle className="text-lg">{step.title}</CardTitle>
+                  <CardDescription>{step.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="border-t bg-primary/5 py-20">
+        <div className="container mx-auto px-4">
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl font-bold md:text-4xl">Testimonials</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+              Trusted by organizations that value speed, quality, and clarity.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                quote:
+                  "Turicks delivered a scalable platform fast and kept us aligned at every milestone.",
+                name: "Operations Lead",
+                org: "Education SaaS",
+              },
+              {
+                quote:
+                  "Their team translated complex workflows into a clean, usable product.",
+                name: "Product Manager",
+                org: "Enterprise Services",
+              },
+              {
+                quote:
+                  "We saw measurable efficiency gains within weeks of launch.",
+                name: "Director",
+                org: "Healthcare Group",
+              },
+            ].map((testimonial) => (
+              <Card key={testimonial.name} className="bg-background/60">
+                <CardHeader>
+                  <CardDescription className="text-base">
+                    “{testimonial.quote}”
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="text-sm text-muted-foreground">
+                  <div className="font-semibold text-foreground">
+                    {testimonial.name}
+                  </div>
+                  <div>{testimonial.org}</div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Screenshots */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl font-bold md:text-4xl">Portfolio</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+              Real product screens from our education, enterprise, and HR
+              solutions.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                src: "/School/MOCKUPS-D1.png",
+                alt: "School management system dashboard preview",
+              },
+              {
+                src: "/Admin%20panel/1.png",
+                alt: "Enterprise management platform admin dashboard",
+              },
+              {
+                src: "/Hr/1%20(1).png",
+                alt: "HR management system employee overview",
+              },
+            ].map((item) => (
+              <div
+                key={item.src}
+                className="relative aspect-[4/3] overflow-hidden rounded-3xl border bg-muted/20"
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Services Highlights Section */}
       <section className="relative overflow-hidden py-20" id="services">
@@ -431,6 +680,16 @@ export default function Home() {
                   className="sm:flex-1"
                 >
                   <Link href="/contact">Request a demo</Link>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="sm:flex-1"
+                >
+                  <Link href="/landing/digitize-your-school-in-14-days">
+                    Digitize in 14 days
+                  </Link>
                 </Button>
               </div>
             </CardContent>

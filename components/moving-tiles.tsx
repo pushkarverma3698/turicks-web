@@ -24,22 +24,22 @@ interface MovingTilesProps {
 
 function TilePill({ tile }: { tile: Tile }) {
   return (
-    <div className="w-[320px] rounded-3xl border bg-background/30 backdrop-blur transition-colors hover:bg-background/45">
-      <div className="p-4">
+    <div className="w-[240px] sm:w-[280px] lg:w-[320px] rounded-3xl border bg-background/30 backdrop-blur transition-colors hover:bg-background/45">
+      <div className="p-3 sm:p-4">
         <div className="rounded-2xl border bg-background/40 overflow-hidden">
           {/* browser chrome */}
           <div className="flex items-center gap-2 border-b bg-muted/30 px-3 py-2">
-            <div className="h-2.5 w-2.5 rounded-full bg-red-500/60" />
-            <div className="h-2.5 w-2.5 rounded-full bg-yellow-500/60" />
-            <div className="h-2.5 w-2.5 rounded-full bg-green-500/60" />
+            <div className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-red-500/60" />
+            <div className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-yellow-500/60" />
+            <div className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-green-500/60" />
             <div
-              className="ml-3 h-3 w-36 rounded-full bg-white/85"
+              className="ml-3 h-2.5 w-28 sm:h-3 sm:w-36 rounded-full bg-white/85"
               aria-hidden="true"
             />
           </div>
 
           {/* real design preview */}
-          <div className="relative h-56 overflow-hidden bg-black">
+          <div className="relative h-40 sm:h-48 lg:h-56 overflow-hidden bg-black">
             {tile.media?.type === "video" ? (
               <video
                 src={tile.media.src}
@@ -51,15 +51,14 @@ function TilePill({ tile }: { tile: Tile }) {
                 playsInline
                 preload="metadata"
               />
-            ) : (
+            ) : tile.media?.src ? (
               <img
-                src={tile.media?.src}
-                alt=""
-                aria-hidden="true"
+                src={tile.media.src}
+                alt={`${tile.label} design preview`}
                 className="h-full w-full object-cover"
                 loading="lazy"
               />
-            )}
+            ) : null}
           </div>
         </div>
       </div>

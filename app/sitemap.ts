@@ -8,6 +8,13 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://turicks.com";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "/",
+    "/solutions",
+    "/solutions/schools",
+    "/solutions/school-erp-like-big-brands",
+    "/solutions/saas-mvp-in-6-weeks",
+    "/solutions/tech-partner-for-non-technical-founders",
+    "/case-studies",
+    "/landing/digitize-your-school-in-14-days",
     "/products",
     "/services",
     "/about",
