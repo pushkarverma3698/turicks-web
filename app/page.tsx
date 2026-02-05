@@ -376,47 +376,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Portfolio Screenshots */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="mb-10 text-center">
-            <h2 className="text-3xl font-bold md:text-4xl">Portfolio</h2>
-            <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-              Real product screens from our education, enterprise, and HR
-              solutions.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              {
-                src: "/School/MOCKUPS-D1.png",
-                alt: "School management system dashboard preview",
-              },
-              {
-                src: "/Admin%20panel/1.png",
-                alt: "Enterprise management platform admin dashboard",
-              },
-              {
-                src: "/Hr/1%20(1).png",
-                alt: "HR management system employee overview",
-              },
-            ].map((item) => (
-              <div
-                key={item.src}
-                className="relative aspect-[4/3] overflow-hidden rounded-3xl border bg-muted/20"
-              >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Services Highlights Section */}
       <section className="relative overflow-hidden py-20" id="services">
         <DecorativeOrbs className="opacity-50" />
