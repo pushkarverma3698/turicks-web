@@ -16,12 +16,12 @@ function applyTheme(mode: ThemeMode) {
  }
 
 export function ThemeToggle() {
-   const [theme, setTheme] = useState<ThemeMode>("dark");
+  const [theme, setTheme] = useState<ThemeMode>("light");
 
    useEffect(() => {
      const stored = window.localStorage.getItem(STORAGE_KEY);
-     const next =
-       stored === "light" || stored === "dark" ? (stored as ThemeMode) : "dark";
+    const next =
+      stored === "light" || stored === "dark" ? (stored as ThemeMode) : "light";
      setTheme(next);
      applyTheme(next);
    }, []);
