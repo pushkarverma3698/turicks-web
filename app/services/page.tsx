@@ -235,9 +235,13 @@ export default function ServicesPage() {
               Our Services
             </h1>
             <p className="text-lg text-muted-foreground md:text-xl">
-              We are a software development agency specializing in building
-              custom SaaS solutions and tailored software for organizations.
-              Whatever your requirements, we can build it.
+              Turicks is a SaaS development partner for startups and growing
+              businesses. We help founders turn ideas into scalable digital
+              products by handling design, development, cloud infrastructure,
+              and long-term support — all under one roof.
+            </p>
+            <p className="mt-4 text-base text-foreground/80 md:text-lg">
+              Think of us as your on-demand product engineering team.
             </p>
           </div>
         </div>

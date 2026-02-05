@@ -72,8 +72,13 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-sm">
-              Building tailored SaaS solutions for organizations. We create
-              custom software that fits your unique requirements.
+              Turicks is a SaaS development partner for startups and growing
+              businesses. We help founders turn ideas into scalable digital
+              products—design, development, cloud infrastructure, and long-term
+              support under one roof.
+            </p>
+            <p className="text-sm text-foreground/80">
+              Think of us as your on-demand product engineering team.
             </p>
             <div className="flex items-center gap-3" aria-label="Social media">
               {socialLinks.map((social) => {
