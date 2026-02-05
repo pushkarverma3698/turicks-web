@@ -247,6 +247,42 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Technologies */}
+      <section className="border-y bg-muted/30 py-16">
+        <div className="container mx-auto px-4">
+          <div className="mb-8 text-center">
+            <h2 className="text-2xl font-bold md:text-3xl">
+              Technologies We Work With
+            </h2>
+            <p className="mt-2 text-muted-foreground">
+              Modern stacks for scalable SaaS, mobile apps, and AI automation.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              "Next.js",
+              "React",
+              "Node.js",
+              "TypeScript",
+              "Python",
+              "PostgreSQL",
+              "AWS",
+              "Docker",
+              "Kubernetes",
+              "Figma",
+            ].map((tech) => (
+              <Badge
+                key={tech}
+                variant="secondary"
+                className="px-4 py-2 text-sm"
+              >
+                {tech}
+              </Badge>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Services Grid */}
       <section className="relative overflow-hidden py-20">
         <DecorativeOrbs className="opacity-40" />

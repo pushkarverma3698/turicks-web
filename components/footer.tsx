@@ -100,10 +100,15 @@ export function Footer() {
           </div>
 
           {/* Links */}
-          <nav aria-label="Footer" className="grid grid-cols-2 gap-8 lg:col-span-3 lg:grid-cols-4">
+          <nav
+            aria-label="Footer"
+            className="grid grid-cols-2 gap-8 lg:col-span-3 lg:grid-cols-4"
+          >
             {Object.entries(footerLinks).map(([title, links]) => (
               <div key={title} className="space-y-3">
-                <h3 className="text-sm font-semibold text-foreground">{title}</h3>
+                <h3 className="text-sm font-semibold text-foreground">
+                  {title}
+                </h3>
                 <ul className="space-y-2.5">
                   {links.map((link) => (
                     <li key={link.name}>

@@ -203,9 +203,9 @@ export default function Home() {
               solutions that transform how organizations operate.
             </p>
           </FadeIn>
-          <StaggerContainer className="grid gap-6 md:grid-cols-3">
+          <StaggerContainer className="grid gap-6 md:grid-cols-3 items-stretch">
             <motion.div variants={staggerItem}>
-              <Card className="group bg-background/40 backdrop-blur border-muted-foreground/15">
+              <Card className="group h-full bg-background/40 backdrop-blur border-muted-foreground/15">
                 <CardHeader>
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
                     <Code className="h-6 w-6 text-primary" />
@@ -222,7 +222,7 @@ export default function Home() {
               </Card>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <Card className="group bg-background/40 backdrop-blur border-muted-foreground/15">
+              <Card className="group h-full bg-background/40 backdrop-blur border-muted-foreground/15">
                 <CardHeader>
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
                     <Building2 className="h-6 w-6 text-primary" />
@@ -238,7 +238,7 @@ export default function Home() {
               </Card>
             </motion.div>
             <motion.div variants={staggerItem}>
-              <Card className="group bg-background/40 backdrop-blur border-muted-foreground/15">
+              <Card className="group h-full bg-background/40 backdrop-blur border-muted-foreground/15">
                 <CardHeader>
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
                     <Users className="h-6 w-6 text-primary" />
@@ -274,79 +274,6 @@ export default function Home() {
         logoColorHex="7c3aed"
         speedSeconds={45}
       />
-
-      {/* Founder Story */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border bg-muted/20">
-              <Image
-                src="/ceo.jpeg"
-                alt="Partha Das, Founder & CEO of Turicks"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border bg-muted px-4 py-2 text-sm">
-                <Users className="h-4 w-4" />
-                <span>Founder Story</span>
-              </div>
-              <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-                People hire people, not just vendors
-              </h2>
-              <p className="text-muted-foreground">
-                Turicks was founded to help organizations replace brittle
-                spreadsheets and patchwork tools with tailored SaaS products
-                that actually match how teams work. We bring deep product
-                strategy, pragmatic engineering, and long‑term partnership to
-                every engagement.
-              </p>
-              <div className="mt-6">
-                <Button asChild variant="outline">
-                  <Link href="/about">Meet the team</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Technologies */}
-      <section className="border-y bg-muted/30 py-16">
-        <div className="container mx-auto px-4">
-          <div className="mb-8 text-center">
-            <h2 className="text-2xl font-bold md:text-3xl">
-              Technologies We Work With
-            </h2>
-            <p className="mt-2 text-muted-foreground">
-              Modern stacks for scalable SaaS, mobile apps, and AI automation.
-            </p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              "Next.js",
-              "React",
-              "Node.js",
-              "TypeScript",
-              "Python",
-              "PostgreSQL",
-              "AWS",
-              "Docker",
-              "Kubernetes",
-              "Figma",
-            ].map((tech) => (
-              <Badge
-                key={tech}
-                variant="secondary"
-                className="px-4 py-2 text-sm"
-              >
-                {tech}
-              </Badge>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Process */}
       <section className="py-20">

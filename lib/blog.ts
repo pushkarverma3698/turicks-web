@@ -397,5 +397,6 @@ export function getBlogPosts() {
 }
 
 export function getBlogPost(slug: string) {
-  return BLOG_POSTS.find((p) => p.slug === slug);
+  const normalizedSlug = decodeURIComponent(slug).toLowerCase();
+  return BLOG_POSTS.find((p) => p.slug.toLowerCase() === normalizedSlug);
 }
