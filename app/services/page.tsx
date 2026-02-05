@@ -93,11 +93,12 @@ const services = [
   },
   {
     icon: Smartphone,
-    title: "Mobile Applications",
+    title: "Mobile Development",
     description:
-      "Native and cross-platform mobile apps with AI features that extend your software's reach to iOS and Android devices.",
+      "Native and cross-platform mobile apps that extend your SaaS to iOS and Android with fast, reliable performance.",
     features: [
       "iOS & Android development",
+      "React Native apps",
       "Cross-platform solutions",
       "Mobile-first design",
       "App store optimization",
@@ -263,6 +264,7 @@ export default function ServicesPage() {
             {[
               "Next.js",
               "React",
+              "React Native",
               "Node.js",
               "TypeScript",
               "Python",

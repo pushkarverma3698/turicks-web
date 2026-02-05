@@ -85,20 +85,11 @@ export default function Home() {
               <span>Your SaaS development partner</span>
             </div>
             <h1 className="mb-6 pb-3 text-4xl font-bold tracking-tight leading-tight sm:text-5xl md:text-6xl text-balance break-words overflow-visible">
-              From Idea to Live Product — We Build Software That Drives Real
-              Business Growth.
-              <span className="block bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent pb-[0.1em]">
-                Turicks: Your SaaS Development Partner
-              </span>
+              Your Technical Partner for Building Scalable SaaS Products
             </h1>
-            <p className="mb-6 text-lg text-muted-foreground md:text-xl">
-              Turicks is a SaaS development partner for startups and growing
-              businesses. We help founders turn ideas into scalable digital
-              products by handling design, development, cloud infrastructure,
-              and long-term support — all under one roof.
-            </p>
-            <p className="mb-8 text-base text-foreground/80 md:text-lg">
-              Think of us as your on-demand product engineering team.
+            <p className="mb-8 text-lg text-muted-foreground md:text-xl">
+              From MVP to full platform, Turicks delivers design, development,
+              and cloud infrastructure so you can focus on growth.
             </p>
             <motion.div
               className="flex flex-col justify-center gap-3 sm:flex-row"

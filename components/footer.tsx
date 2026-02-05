@@ -18,6 +18,19 @@ export function Footer() {
       { name: "About Us", href: "/about" },
       { name: "Our Team", href: "/about#team" },
       { name: "Services", href: "/services" },
+      { name: "SaaS Development Company", href: "/saas-development-company" },
+      { name: "Build a SaaS MVP", href: "/build-saas-mvp" },
+      { name: "SaaS Product Cost (2026)", href: "/cost-to-build-a-saas-product-2026" },
+      {
+        name: "Custom SaaS App Development",
+        href: "/custom-saas-application-development",
+      },
+      {
+        name: "School SaaS Case Study",
+        href: "/case-study-building-a-school-saas-platform",
+      },
+      { name: "UI/UX Design Services", href: "/ui-ux-design-services" },
+      { name: "Website Development", href: "/website-development" },
     ],
     Support: [
       { name: "Contact", href: "/contact" },
