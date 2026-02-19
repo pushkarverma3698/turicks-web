@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Case Study: Building a School SaaS Platform | Turicks",
   description:
-    "Case study on building a school SaaS platform: goals, process, and outcomes for operational automation.",
+    "Case study on building a school SaaS platform: goals, process, and outcomes for operational automation",
   alternates: { canonical: "/case-study-building-a-school-saas-platform" },
 };
 

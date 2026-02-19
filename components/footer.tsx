@@ -1,52 +1,11 @@
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
-import { BLOG_POSTS } from "@/lib/blog";
+
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const pageLinks = [
-    { name: "SaaS Development Company", href: "/saas-development-company" },
-    { name: "Build a SaaS MVP", href: "/build-saas-mvp" },
-    { name: "SaaS Product Cost (2026)", href: "/cost-to-build-a-saas-product-2026" },
-    {
-      name: "Custom SaaS App Development",
-      href: "/custom-saas-application-development",
-    },
-    { name: "UI/UX Design Services", href: "/ui-ux-design-services" },
-    { name: "Website Development", href: "/website-development" },
-    { name: "Software Automation", href: "/software-automation" },
-    { name: "AI Automation", href: "/ai-automation" },
-    { name: "Mobile App Development", href: "/mobile-app-development" },
-    { name: "Web App Development", href: "/web-app-development" },
-    { name: "Admin Panel Development", href: "/admin-panel-development" },
-    { name: "Custom Software Solutions", href: "/custom-software-solutions" },
-    { name: "Software Made Simple", href: "/software-made-simple" },
-  ];
 
-  const caseStudyLinks = [
-    {
-      name: "School SaaS Case Study",
-      href: "/case-study-building-a-school-saas-platform",
-    },
-    {
-      name: "Operations Automation Case Study",
-      href: "/case-study-operations-automation",
-    },
-    {
-      name: "HR Platform Case Study",
-      href: "/case-study-hr-platform",
-    },
-    {
-      name: "Admin Dashboard Case Study",
-      href: "/case-study-admin-dashboard",
-    },
-  ];
-
-  const blogLinks = BLOG_POSTS.map((post) => ({
-    name: post.title,
-    href: `/blog/${post.slug}`,
-  }));
 
   const socialLinks = [
     { name: "LinkedIn", href: "https://www.linkedin.com", icon: Linkedin },
@@ -90,54 +49,38 @@ export function Footer() {
           {/* Primary Links */}
           <nav
             aria-label="Footer primary"
-            className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
+            className="grid grid-cols-1 gap-8 sm:grid-cols-3"
           >
-            <div className="space-y-2.5 sm:col-span-2 lg:col-span-2">
-              <h3 className="text-xs font-semibold text-foreground">Pages</h3>
-              <ul className="grid gap-2 md:grid-cols-2">
-                {pageLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-[11px] text-muted-foreground hover:text-foreground transition-colors hover:underline underline-offset-4"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+            <div className="space-y-3">
+              <Link href="/pages" className="group inline-flex items-center gap-2">
+                <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">Pages</h3>
+                <span className="opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0">→</span>
+              </Link>
+              <p className="text-sm text-muted-foreground">
+                Browse our full directory of services, solutions, and resources.
+              </p>
             </div>
-            <div className="space-y-2.5">
-              <h3 className="text-xs font-semibold text-foreground">Blog</h3>
-              <ul className="grid gap-2 sm:grid-cols-2">
-                {blogLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-[11px] text-muted-foreground hover:text-foreground transition-colors hover:underline underline-offset-4"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+            
+            <div className="space-y-3">
+              <Link href="/blog" className="group inline-flex items-center gap-2">
+                <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">Blog</h3>
+                 <span className="opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0">→</span>
+              </Link>
+              <p className="text-sm text-muted-foreground">
+                Insights on SaaS product delivery, automation, and tech trends.
+              </p>
             </div>
-            <div className="space-y-2.5">
-              <h3 className="text-xs font-semibold text-foreground">
-                Case Studies
-              </h3>
-              <ul className="space-y-1.5">
-                {caseStudyLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-[11px] text-muted-foreground hover:text-foreground transition-colors hover:underline underline-offset-4"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+
+            <div className="space-y-3">
+              <Link href="/case-studies" className="group inline-flex items-center gap-2">
+                <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                  Case Studies
+                </h3>
+                 <span className="opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0">→</span>
+              </Link>
+              <p className="text-sm text-muted-foreground">
+                Real outcomes from our projects and success stories.
+              </p>
             </div>
           </nav>
           <div className="space-y-3">

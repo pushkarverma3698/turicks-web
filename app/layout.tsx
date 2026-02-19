@@ -21,8 +21,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://turicks.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Turicks - SaaS Development Partner for Startups and EdTech",
-  description:
-    "We are a SaaS development partner for startups and EdTech companies. From school management systems to custom SaaS platforms, we build software that delivers outcomes.",
+  description: "Turicks is your AI-native SaaS development partner. We build custom AI agents, scalable web platforms, and automated workflows for startups and enterprises.",
   keywords: [
     "SaaS development partner",
     "SaaS development company",
@@ -33,11 +32,18 @@ export const metadata: Metadata = {
     "B2B SaaS",
     "SaaS platform",
     "enterprise software",
+    "AI agents",
+    "agentic AI",
+    "AI automation",
+    "custom AI solutions",
+    "software development agency",
+    "App development",
+    "Web development",
   ],
   openGraph: {
     title: "Turicks - SaaS Development Partner for Startups and EdTech",
     description:
-      "We are a SaaS development partner for startups and EdTech companies.",
+      "Turicks is your AI-native SaaS development partner. We build custom AI agents, scalable web platforms, and automated workflows for startups and enterprises.",
     type: "website",
     url: SITE_URL,
     siteName: "Turicks",
