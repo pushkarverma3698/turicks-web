@@ -14,9 +14,9 @@ export async function generateStaticParams(): Promise<Params[]> {
 export async function generateMetadata({
   params,
 }: {
-  params: Params;
+  params: Promise<Params>;
 }): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) return {};
 
@@ -125,8 +125,8 @@ function renderBlocks(content: string) {
   });
 }
 
-export default async function BlogPostPage({ params }: { params: Params }) {
-  const { slug } = params;
+export default async function BlogPostPage({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) notFound();
 

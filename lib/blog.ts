@@ -9,6 +9,43 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "the-era-of-ai-ingested-websites",
+    title: "The Era of AI-Ingested Websites: Research, Build, and Engage Automatically",
+    description:
+      "Discover how AI-native website creation is moving beyond templates to autonomous ecosystems that research your business and engage customers 24/7.",
+    dateISO: "2026-05-10",
+    tags: ["BizSite AI", "AI Websites", "Automation", "Future of Web"],
+    content: `
+The way we build websites is undergoing a radical transformation. We are moving from manual, template-based design to **AI-ingested ecosystems**—websites that don't just exist but understand and operate your business.
+
+## From Templates to Intelligence
+
+In the past, building a business website meant choosing a template, writing copy, and hoping for the best. **BizSite AI** flips this model. Instead of you telling the AI what to build, the AI researches your business, your competitors, and your industry to *decide* what needs to be built.
+
+## What is an AI-Ingested Website?
+
+An "AI-ingested" website is one where the content, structure, and interactive elements are generated based on a deep understanding of the business data. 
+
+### 1. Autonomous Research
+The system starts by searching the web for your business details, social profiles, and industry trends. It identifies your unique selling points and crafts copy that speaks directly to your target audience.
+
+### 2. Integrated AI Chatbots
+Every landing page comes pre-ingested with an autonomous assistant. This isn't a simple "if-this-then-that" bot. It is a large language model trained specifically on the research gathered during the build phase. It knows your products, your pricing, and your mission.
+
+### 3. Zero-Touch Lead Generation
+The most powerful feature of this new era is proactive engagement. The AI engine can identify high-value prospects, generate a custom website preview specifically for them, and send it via personalized outreach—all without human intervention.
+
+## Why It Matters
+
+For small and medium businesses, this means:
+- **Zero Effort**: A professional digital presence in minutes, not weeks.
+- **24/7 Sales**: A chatbot that actually closes deals while you sleep.
+- **Scale**: Reaching hundreds of prospects with personalized previews automatically.
+
+The future of the web is not just about being online; it's about being **intelligent**. At Turicks, we're building that future today with BizSite AI.
+`,
+  },
+  {
     slug: "the-rise-of-agentic-ai-beyond-chatbots",
     title: "The Rise of Agentic AI: Beyond Chatbots",
     description:
