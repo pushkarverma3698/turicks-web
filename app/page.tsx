@@ -28,6 +28,7 @@ import {
   Zap,
   BarChart3,
   Workflow,
+  MessageSquare,
 } from "lucide-react";
 import { FadeIn } from "@/components/animations/fade-in";
 import {
@@ -262,7 +263,7 @@ export default function Home() {
           "Jugnoo",
           "NrichLearning",
         ]}
-        logoColorHex="7c3aed"
+        logoColorHex="7C3AED"
         speedSeconds={45}
       />
 
@@ -574,6 +575,105 @@ export default function Home() {
         </div>
       </section>
 
+      {/* BizSite AI Section */}
+      <section className="relative overflow-hidden py-24 bg-background">
+        <DecorativeOrbs className="opacity-30" />
+        <div className="container mx-auto px-4 relative">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
+            <FadeIn className="order-2 lg:order-1" x={-20}>
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-primary/5 px-4 py-2 text-sm font-medium text-primary">
+                <Sparkles className="h-4 w-4" />
+                <span>Next-Gen Service</span>
+              </div>
+              <h2 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl leading-tight text-balance">
+                BizSite AI: <span className="text-primary">Website Creation</span> & Autonomous Presence
+              </h2>
+              <p className="mb-8 text-lg text-muted-foreground leading-relaxed">
+                We deliver more than just a website. We build an AI-ingested 
+                ecosystem that understands your business, engages your 
+                customers, and scales your outreach—all without you lifting a finger.
+              </p>
+              
+              <StaggerContainer className="grid gap-6 mb-10">
+                <motion.div variants={staggerItem} className="flex gap-4 p-4 rounded-2xl border bg-background/50 backdrop-blur-sm transition-colors hover:bg-muted/30">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <Brain className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-1">Smart Ingestion</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Our AI agents research your business, competitors, and industry to craft 
+                      high-converting copy and design that reflects your brand perfectly.
+                    </p>
+                  </div>
+                </motion.div>
+                
+                <motion.div variants={staggerItem} className="flex gap-4 p-4 rounded-2xl border bg-background/50 backdrop-blur-sm transition-colors hover:bg-muted/30">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <MessageSquare className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-1">24/7 AI Chatbot</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Every site includes a pre-trained autonomous assistant that knows your 
+                      offerings inside out, answering leads and booking meetings around the clock.
+                    </p>
+                  </div>
+                </motion.div>
+                
+                <motion.div variants={staggerItem} className="flex gap-4 p-4 rounded-2xl border bg-background/50 backdrop-blur-sm transition-colors hover:bg-muted/30">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <Zap className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-1">Autonomous Lead Gen</h3>
+                    <p className="text-sm text-muted-foreground">
+                      The Biz AI engine finds prospects and automatically sends them personalized 
+                      website previews, initiating the sales cycle while you sleep.
+                    </p>
+                  </div>
+                </motion.div>
+              </StaggerContainer>
+
+              <div className="flex flex-wrap gap-4">
+                <Button asChild size="lg" className="rounded-full px-8">
+                  <Link href="#highlights">
+                    Get Your AI Preview
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="rounded-full px-8">
+                  <Link href="/products">View Sample Projects</Link>
+                </Button>
+              </div>
+            </FadeIn>
+            
+            <FadeIn className="order-1 lg:order-2 relative" x={20}>
+              <div className="relative aspect-square lg:aspect-[4/5] xl:aspect-square">
+                {/* Decorative background element */}
+                <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-[2rem] blur-2xl opacity-50 animate-pulse" />
+                
+                <div className="relative h-full w-full overflow-hidden rounded-[2rem] border bg-muted shadow-2xl transition-transform hover:scale-[1.02] duration-500">
+                  <Image
+                    src="/bizsite-ai-mockup.png"
+                    alt="BizSite AI Mockup - Premium Website with Chatbot"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                  />
+                  
+                  {/* Floating badge */}
+                  <div className="absolute top-6 left-6 rounded-full bg-background/80 backdrop-blur-md border px-4 py-2 text-xs font-bold shadow-lg flex items-center gap-2">
+                    <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                    AI ASSISTANT ONLINE
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* AI Agents Development Section */}
       <section className="relative overflow-hidden py-20 bg-gradient-to-b from-background to-muted/30">
         <DecorativeOrbs className="opacity-40" />
@@ -740,8 +840,9 @@ export default function Home() {
         </div>
       </section>
 
-      <MovingTiles
-        title="More Product Highlights"
+      <div id="highlights">
+        <MovingTiles
+          title="More Product Highlights"
         subtitle="A few more platforms we can deliver and customize for your organization."
         speedSeconds={55}
         topRow={[
@@ -829,6 +930,7 @@ export default function Home() {
           },
         ]}
       />
+      </div>
 
       {/* CTA Section */}
       <section className="border-t bg-primary/5 py-20">

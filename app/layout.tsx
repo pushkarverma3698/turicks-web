@@ -20,9 +20,12 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://turicks.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Turicks - SaaS Development Partner for Startups and EdTech",
+  title: {
+    default: "Turicks - SaaS Development Partner for Startups and EdTech",
+    template: "%s | Turicks",
+  },
   description:
-    "We are a SaaS development partner for startups and EdTech companies. From school management systems to custom SaaS platforms, we build software that delivers outcomes.",
+    "Turicks is your AI-native SaaS development partner. We build custom AI-ingested websites, autonomous agents, and scalable platforms for startups and enterprises.",
   keywords: [
     "SaaS development partner",
     "SaaS development company",
@@ -30,14 +33,28 @@ export const metadata: Metadata = {
     "startup SaaS",
     "custom SaaS development",
     "school management system",
-    "B2B SaaS",
-    "SaaS platform",
-    "enterprise software",
+    "AI-ingested websites",
+    "AI website creation",
+    "agentic AI",
+    "AI automation",
+    "software development agency",
+    "custom software solutions",
   ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "Turicks - SaaS Development Partner for Startups and EdTech",
     description:
-      "We are a SaaS development partner for startups and EdTech companies.",
+      "Turicks is your AI-native SaaS development partner. We build custom AI-ingested websites, autonomous agents, and scalable platforms for startups and enterprises.",
     type: "website",
     url: SITE_URL,
     siteName: "Turicks",
@@ -45,13 +62,16 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${SITE_URL}/globe.svg`,
+        width: 800,
+        height: 600,
+        alt: "Turicks Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Turicks - Tailored SaaS Solutions",
-    description: "Building tailored SaaS solutions for organizations",
+    description: "Building tailored AI-ingested SaaS solutions for organizations",
     images: [`${SITE_URL}/globe.svg`],
   },
   alternates: {
