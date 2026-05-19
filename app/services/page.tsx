@@ -18,46 +18,52 @@ import {
   Smartphone,
   Cloud,
   Shield,
+  Bot,
+  Sparkles,
 } from "lucide-react";
 import { DecorativeOrbs } from "@/components/decorative-orbs";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://turicks.com";
 
 export const metadata: Metadata = {
-  title: "Our Services - Turicks",
+  title: "AI Agent Development, SaaS & Custom Software Services | Turicks",
   description:
-    "We are a software development agency specializing in custom SaaS solutions, web applications, and tailored software for organizations.",
+    "Turicks builds AI agents, AI-ingested websites, custom SaaS platforms, mobile apps & enterprise systems. One team, end-to-end. India's AI-native dev partner.",
   keywords: [
+    "AI agent development company India",
+    "agentic AI development services",
+    "custom AI agents",
+    "AI-ingested websites",
     "custom SaaS development",
-    "SaaS development services",
-    "SaaS development company",
+    "SaaS development services India",
     "software development agency",
-    "web applications",
-    "web app development",
-    "AI automation",
+    "mobile app development",
+    "enterprise software development",
+    "LangGraph development",
     "UI/UX services",
     "cloud infrastructure",
-    "enterprise software development",
   ],
   openGraph: {
-    title: "Our Services - Turicks",
+    title: "AI Agent Development, SaaS & Custom Software Services | Turicks",
     description:
-      "We are a software development agency specializing in custom SaaS solutions, web applications, and tailored software for organizations.",
+      "Turicks builds AI agents, AI-ingested websites, custom SaaS platforms, mobile apps & enterprise systems. One team, end-to-end.",
     type: "website",
     url: `${SITE_URL}/services`,
     siteName: "Turicks",
     images: [
       {
-        url: `${SITE_URL}/globe.svg`,
+        url: `${SITE_URL}/og-image.svg`,
+        width: 1200,
+        height: 630,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Services - Turicks",
+    title: "AI Agent Development, SaaS & Custom Software | Turicks",
     description:
-      "We are a software development agency specializing in custom SaaS solutions, web applications, and tailored software for organizations.",
-    images: [`${SITE_URL}/globe.svg`],
+      "AI agents, AI-ingested websites, SaaS & enterprise systems — built by India's AI-native dev team.",
+    images: [`${SITE_URL}/og-image.svg`],
   },
   alternates: {
     canonical: "/services",
@@ -66,36 +72,70 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: Code,
-    title: "AI-Driven Custom SaaS Development",
+    icon: Bot,
+    title: "AI Agent Development",
     description:
-      "From concept to deployment, we build automated, scalable SaaS platforms with AI integration tailored to your organization's unique requirements.",
+      "We design and deploy production-grade AI agents using LangGraph, CrewAI, and AutoGen. From a single workflow agent to a full multi-agent system — we build agents that actually run your business.",
     features: [
-      "AI-powered automation",
+      "LangGraph & CrewAI development",
+      "Multi-agent orchestration",
+      "RAG-powered knowledge agents",
+      "Workflow automation agents",
+      "Enterprise-grade deployment",
+    ],
+    link: "/ai-agent-development",
+    badge: "Hot",
+  },
+  {
+    icon: Sparkles,
+    title: "AI-Ingested Websites (BizSite AI)",
+    description:
+      "Websites that generate leads on their own. AI-crafted copy, pre-trained chatbots, and autonomous prospect outreach — all built around your business, deployed in days.",
+    features: [
+      "AI-generated conversion copy",
+      "24/7 pre-trained AI chatbot",
+      "Autonomous lead outreach",
+      "Analytics & lead tracking",
+      "2-week delivery",
+    ],
+    link: "/ai-ingested-websites",
+    badge: "New",
+  },
+  {
+    icon: Code,
+    title: "Custom SaaS Development",
+    description:
+      "We turn your idea into a live, scalable SaaS product. AI-augmented development means your MVP ships in 6 weeks — not 6 months. Then we scale it with you.",
+    features: [
+      "AI-powered development process",
       "Full-stack development",
       "Cloud-native architecture",
       "Scalable infrastructure",
       "API development & integration",
     ],
+    link: null,
+    badge: null,
   },
   {
     icon: Database,
-    title: "Automated Enterprise Solutions",
+    title: "Enterprise Solutions",
     description:
-      "Complex automated software systems for large organizations with AI-driven workflows, integrations, and security requirements.",
+      "Complex integrations, legacy modernization, secure multi-tenant architectures. We handle the hard stuff so your enterprise clients don't even notice the seams.",
     features: [
-      "AI-driven automation",
       "System architecture design",
       "Legacy system modernization",
       "Data migration & integration",
       "Enterprise security & compliance",
+      "Multi-team rollouts",
     ],
+    link: null,
+    badge: null,
   },
   {
     icon: Smartphone,
     title: "Mobile Development",
     description:
-      "Native and cross-platform mobile apps that extend your SaaS to iOS and Android with fast, reliable performance.",
+      "Cross-platform apps with React Native or native iOS/Android. Built for performance, designed for delight — and shipped fast.",
     features: [
       "iOS & Android development",
       "React Native apps",
@@ -103,12 +143,14 @@ const services = [
       "Mobile-first design",
       "App store optimization",
     ],
+    link: null,
+    badge: null,
   },
   {
     icon: Palette,
-    title: "UI/UX Services",
+    title: "UI/UX Design",
     description:
-      "Product UI/UX for SaaS: research, flows, wireframes, prototypes, and polished interfaces that users love.",
+      "Beautiful, intuitive interfaces backed by user research. We don't just make things look good — we make them work better and convert more.",
     features: [
       "User research & analysis",
       "Wireframing & prototyping",
@@ -116,30 +158,36 @@ const services = [
       "Design systems",
       "Usability testing",
     ],
+    link: null,
+    badge: null,
   },
   {
     icon: Cloud,
-    title: "Cloud Infrastructure",
+    title: "Cloud & DevOps",
     description:
-      "Reliable, secure, and scalable cloud infrastructure with automated deployment to power your applications and data.",
+      "Reliable, auto-scaling cloud infrastructure with CI/CD pipelines, monitoring, and cost optimization — so your product runs perfectly, always.",
     features: [
       "Automated cloud architecture",
       "DevOps & CI/CD setup",
       "Monitoring & analytics",
       "Cost optimization",
     ],
+    link: null,
+    badge: null,
   },
   {
     icon: Shield,
     title: "Security & Compliance",
     description:
-      "Enterprise-grade security practices and compliance support with automated monitoring to protect your data and users.",
+      "Enterprise-grade security built in from day one — audits, encryption, access control, and compliance so your clients trust you completely.",
     features: [
       "Security audits",
       "Compliance consulting",
       "Data encryption",
       "Access control systems",
     ],
+    link: null,
+    badge: null,
   },
 ];
 
@@ -205,17 +253,23 @@ export default function ServicesPage() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Custom SaaS Development",
-    serviceType: "Custom SaaS Development",
+    name: "AI Agent Development & Custom SaaS",
+    serviceType: [
+      "AI Agent Development",
+      "Custom SaaS Development",
+      "AI-Ingested Websites",
+      "Mobile App Development",
+      "Enterprise Software",
+    ],
     provider: {
       "@type": "Organization",
       name: "Turicks",
       url: SITE_URL,
     },
-    areaServed: "Global",
+    areaServed: ["India", "Global"],
     url: `${SITE_URL}/services`,
     description:
-      "Custom SaaS development, web applications, UI/UX services, cloud infrastructure, and security for organizations.",
+      "Turicks builds custom AI agents, AI-ingested websites, SaaS platforms, mobile apps, and enterprise systems — India's AI-native development team.",
   };
 
   return (
@@ -233,17 +287,19 @@ export default function ServicesPage() {
         <DecorativeOrbs className="opacity-60" />
         <div className="container mx-auto px-4 relative">
           <div className="mx-auto max-w-3xl text-center">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border bg-muted px-4 py-2 text-sm">
+              <Bot className="h-4 w-4 text-primary" />
+              <span>Full-Spectrum Development</span>
+            </div>
             <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-              Our Services
+              AI Agent Development, SaaS & Custom Software —{" "}
+              <span className="text-primary">We Build Everything</span>
             </h1>
             <p className="text-lg text-muted-foreground md:text-xl">
-              Turicks is a SaaS development partner for startups and growing
-              businesses. We help founders turn ideas into scalable digital
-              products by handling design, development, cloud infrastructure,
-              and long-term support — all under one roof.
-            </p>
-            <p className="mt-4 text-base text-foreground/80 md:text-lg">
-              Think of us as your on-demand product engineering team.
+              Turicks is your AI-native build partner. We don&apos;t do one
+              thing well — we do <em>everything</em> well. AI agents, full SaaS
+              platforms, mobile apps, AI-ingested websites, enterprise systems,
+              UI/UX. One team. End-to-end.
             </p>
           </div>
         </div>
@@ -262,12 +318,19 @@ export default function ServicesPage() {
           </div>
           <div className="flex flex-wrap justify-center gap-3">
             {[
+              "LangGraph",
+              "CrewAI",
+              "AutoGen",
+              "LangChain",
+              "OpenAI API",
+              "Anthropic Claude API",
+              "Python",
+              "FastAPI",
               "Next.js",
               "React",
               "React Native",
               "Node.js",
               "TypeScript",
-              "Python",
               "PostgreSQL",
               "AWS",
               "Docker",
@@ -292,11 +355,11 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 relative">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              What We Offer
+              What We Build
             </h2>
             <p className="mx-auto max-w-2xl text-muted-foreground">
-              Comprehensive software development services to bring your ideas to
-              life.
+              Every service, fully delivered — from first line of code to
+              production deployment and beyond.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -305,11 +368,18 @@ export default function ServicesPage() {
               return (
                 <Card
                   key={service.title}
-                  className="group flex flex-col bg-background/40 backdrop-blur border-muted-foreground/15"
+                  className={`group flex flex-col backdrop-blur ${service.badge ? "border-primary/30 bg-primary/5" : "bg-background/40 border-muted-foreground/15"}`}
                 >
                   <CardHeader>
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
-                      <Icon className="h-6 w-6 text-primary" />
+                    <div className="mb-3 flex items-center gap-3">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
+                        <Icon className="h-6 w-6 text-primary" />
+                      </div>
+                      {service.badge && (
+                        <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
+                          {service.badge}
+                        </span>
+                      )}
                     </div>
                     <CardTitle>{service.title}</CardTitle>
                     <CardDescription>{service.description}</CardDescription>
@@ -326,6 +396,14 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
+                    {service.link && (
+                      <Link
+                        href={service.link}
+                        className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline"
+                      >
+                        Learn more <ArrowRight className="h-3 w-3" />
+                      </Link>
+                    )}
                   </CardContent>
                 </Card>
               );
@@ -374,8 +452,11 @@ export default function ServicesPage() {
               </div>
             </div>
             <p className="mt-6 text-sm text-muted-foreground">
-              We focus on clarity, proof, and long‑term partnership so you can
-              choose with confidence.
+              Most agencies specialize in one thing. We specialize in shipping
+              the <em>right</em> thing — whether that&apos;s an AI agent, a
+              SaaS product, a mobile app, or an AI-powered website. Our clients
+              don&apos;t need to manage four vendors. They get one team that
+              owns the whole outcome.
             </p>
           </div>
         </div>
@@ -408,18 +489,27 @@ export default function ServicesPage() {
       <section className="border-t bg-primary/5 py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-            Let&apos;s Build Your Next Dream Solution
+            Tell Us What You Want to Build
           </h2>
           <p className="mb-8 mx-auto max-w-2xl text-muted-foreground">
-            Let&apos;s discuss your project requirements and how we can help
-            bring your vision to life with AI-driven, automated solutions.
+            AI agent, SaaS platform, AI-powered website, mobile app — or
+            something entirely new. If it can be built with software and AI,
+            we&apos;ll build it. Book a free strategy call and we&apos;ll map
+            out your project in 30 minutes.
           </p>
-          <Button asChild size="lg">
-            <Link href="/contact">
-              Get Started
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button asChild size="lg">
+              <Link href="/contact">
+                Book a Free Strategy Call
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/ai-agent-development">
+                Explore AI Agents
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>

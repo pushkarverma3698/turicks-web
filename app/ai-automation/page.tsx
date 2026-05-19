@@ -2,9 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "AI Automation Services | Turicks",
+  title: "AI Workflow Automation Services — Smarter Processes, Less Manual Work | Turicks",
   description:
-    "AI automation services to streamline workflows, improve decision-making, and reduce manual effort with intelligent systems.",
+    "AI workflow automation to classify documents, triage tickets, score leads, and automate reporting — responsible AI delivery with audit logs and human-in-the-loop controls.",
+  keywords: [
+    "AI workflow automation",
+    "AI automation services India",
+    "document classification AI",
+    "AI ticket triage",
+    "lead scoring AI",
+    "workflow automation India",
+  ],
   alternates: { canonical: "/ai-automation" },
 };
 
@@ -13,11 +21,11 @@ export default function AiAutomationPage() {
     <div className="container mx-auto px-4 py-16">
       <header className="mx-auto max-w-3xl text-center">
         <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
-          AI Automation Services
+          AI Workflow Automation — Smarter Processes, Less Manual Work
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
           Combine AI and workflow automation to reduce cost, speed up decisions,
-          and scale operations.
+          and scale operations — without losing control or auditability.
         </p>
       </header>
 

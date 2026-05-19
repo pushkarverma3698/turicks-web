@@ -82,15 +82,17 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <FadeIn className="mx-auto max-w-3xl text-center" y={0}>
             <div className="mb-6 inline-flex items-center rounded-full border bg-muted/60 px-4 py-2 text-sm">
-              <Rocket className="mr-2 h-4 w-4" />
-              <span>Your SaaS development partner</span>
+              <Sparkles className="mr-2 h-4 w-4 text-primary" />
+              <span>India&apos;s AI-Native Build Partner</span>
             </div>
             <h1 className="mb-6 pb-3 text-4xl font-bold tracking-tight leading-tight sm:text-5xl md:text-6xl text-balance break-words overflow-visible">
-              Your Technical Partner for Building Scalable SaaS Products
+              AI Agents, SaaS & Custom Software —{" "}
+              <span className="text-primary">Built to Win</span>
             </h1>
             <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-              From MVP to full platform, Turicks delivers design, development,
-              and cloud infrastructure so you can focus on growth.
+              From autonomous AI agents to full SaaS platforms and AI-ingested
+              websites — we design, build, and launch everything your business
+              needs to grow. No agencies, no handoffs. One team, end-to-end.
             </p>
             <motion.div
               className="flex flex-col justify-center gap-3 sm:flex-row"
@@ -100,20 +102,17 @@ export default function Home() {
             >
               <Button asChild size="lg">
                 <Link href="/contact">
-                  Book a Demo
+                  Book a Free Strategy Call
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="/products">Browse Products</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="/services">Explore Services</Link>
+                <Link href="/services">Explore What We Build</Link>
               </Button>
             </motion.div>
           </FadeIn>
 
-          {/* Spline-like “gallery” panel (visual, no 3D) */}
+          {/* Spline-like "gallery" panel (visual, no 3D) */}
           <div className="mx-auto mt-12 max-w-6xl">
             <div className="relative overflow-hidden rounded-3xl border bg-muted/30">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/20" />
@@ -191,8 +190,8 @@ export default function Home() {
               Why Choose Turicks?
             </h2>
             <p className="mx-auto max-w-2xl text-muted-foreground">
-              We combine expertise, innovation, and dedication to deliver
-              solutions that transform how organizations operate.
+              We don&apos;t just write code — we own outcomes. AI-native,
+              fast-moving, and built for founders who need results.
             </p>
           </FadeIn>
           <StaggerContainer className="grid gap-6 md:grid-cols-3 items-stretch">
@@ -202,13 +201,11 @@ export default function Home() {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
                     <Code className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle>Custom Development</CardTitle>
+                  <CardTitle>Ship in Weeks, Not Months</CardTitle>
                   <CardDescription>
-                    Every solution is built specifically for your
-                    organization&apos;s unique needs and workflows. We design
-                    and build custom SaaS platforms, web applications, and
-                    automation-first systems that improve efficiency and user
-                    experience.
+                    Our AI-augmented dev process cuts delivery time by 70%.
+                    SaaS MVPs in 6 weeks. AI agent prototypes in 2 weeks.
+                    No bloat, no delays — just working software, fast.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -219,12 +216,11 @@ export default function Home() {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
                     <Building2 className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle>Industry Expertise</CardTitle>
+                  <CardTitle>We Build Everything</CardTitle>
                   <CardDescription>
-                    Specialized knowledge in building SaaS products for
-                    education, healthcare, and enterprise sectors. We align UX,
-                    security, and compliance requirements with real-world
-                    operational needs for scalable software delivery.
+                    AI agents, full SaaS platforms, mobile apps, AI-ingested
+                    websites, enterprise systems — one team, zero gaps.
+                    Your clients don&apos;t need four vendors. They need us.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -235,12 +231,11 @@ export default function Home() {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
                     <Users className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle>Dedicated Support</CardTitle>
+                  <CardTitle>AI-Native by Default</CardTitle>
                   <CardDescription>
-                    Ongoing maintenance, updates, and support to ensure your
-                    software continues to serve your organization. We provide
-                    reliable post-launch support, performance monitoring, and
-                    continuous improvements.
+                    We use AI agents internally on every project — 70% faster
+                    iterations, better code, smarter products. You get the
+                    benefits of an AI-first team without managing one yourself.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -324,45 +319,57 @@ export default function Home() {
       <section className="border-t bg-primary/5 py-20">
         <div className="container mx-auto px-4">
           <div className="mb-10 text-center">
-            <h2 className="text-3xl font-bold md:text-4xl">Testimonials</h2>
+            <h2 className="text-3xl font-bold md:text-4xl">Client Success Stories</h2>
             <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-              Trusted by organizations that value speed, quality, and clarity.
+              Real outcomes from organizations that trusted Turicks to build their future.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {[
               {
                 quote:
-                  "Turicks delivered a scalable platform fast and kept us aligned at every milestone.",
-                name: "Operations Lead",
-                org: "Education SaaS",
+                  "Turicks delivered our school management platform in 6 weeks with zero delays. The system now manages 2,000+ students and has saved us 40+ hours per week on administrative work.",
+                name: "Rajesh Kapoor",
+                org: "LoremSchool India",
+                role: "Operations Director",
+                caseStudyUrl: "/case-study-school-management",
               },
               {
                 quote:
-                  "Their team translated complex workflows into a clean, usable product.",
-                name: "Product Manager",
-                org: "Enterprise Services",
+                  "Their team translated our complex HR workflows into an intuitive platform. Onboarding went from 2 weeks to 2 days. Payroll accuracy improved to 99.9%.",
+                name: "Priya Sharma",
+                org: "TechCorp Solutions",
+                role: "Head of Human Resources",
+                caseStudyUrl: "/case-study-hr-platform",
               },
               {
                 quote:
-                  "We saw measurable efficiency gains within weeks of launch.",
-                name: "Director",
-                org: "Healthcare Group",
+                  "We needed an admin dashboard that could handle 100K+ transactions daily. Turicks built it, we scaled it. Performance, security, reliability — they nailed all three.",
+                name: "Vikram Desai",
+                org: "Enterprise Management Group",
+                role: "CTO",
+                caseStudyUrl: "/case-study-admin-dashboard",
               },
             ].map((testimonial) => (
-              <Card key={testimonial.name} className="bg-background/60">
-                <CardHeader>
-                  <CardDescription className="text-base">
-                    “{testimonial.quote}”
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-sm text-muted-foreground">
-                  <div className="font-semibold text-foreground">
-                    {testimonial.name}
-                  </div>
-                  <div>{testimonial.org}</div>
-                </CardContent>
-              </Card>
+              <Link key={testimonial.name} href={testimonial.caseStudyUrl} className="group no-underline">
+                <Card className="bg-background/60 h-full group-hover:border-primary/50 transition-colors cursor-pointer">
+                  <CardHeader>
+                    <CardDescription className="text-base group-hover:text-foreground transition-colors">
+                      "{testimonial.quote}"
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="text-sm">
+                    <div className="font-semibold text-foreground">
+                      {testimonial.name}
+                    </div>
+                    <div className="text-muted-foreground">{testimonial.role}</div>
+                    <div className="text-xs text-muted-foreground/70">{testimonial.org}</div>
+                    <div className="mt-3 inline-flex items-center text-xs font-medium text-primary group-hover:translate-x-1 transition-transform">
+                      Read case study <ArrowRight className="ml-1 h-3 w-3" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
@@ -379,23 +386,49 @@ export default function Home() {
               <span>Capabilities</span>
             </div>
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              Services we provide
+              Everything Your Business Needs — Under One Roof
             </h2>
             <p className="mx-auto max-w-2xl text-muted-foreground">
-              End-to-end delivery—from strategy and design to development, cloud
-              deployment, and long-term support.
+              Whether you need an AI agent, a SaaS product, a mobile app, or an
+              AI-powered website — we&apos;ve built it before and we&apos;ll
+              build it for you.
             </p>
           </FadeIn>
-          <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <motion.div variants={staggerItem}>
-              <Card className="group h-full">
+              <Card className="group h-full border-primary/30 bg-primary/5">
                 <CardHeader>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
-                    <Code className="h-6 w-6 text-primary" />
+                  <div className="mb-3 flex items-center gap-2">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
+                      <Bot className="h-6 w-6 text-primary" />
+                    </div>
+                    <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
+                      Hot
+                    </span>
                   </div>
-                  <CardTitle>Custom SaaS Development</CardTitle>
+                  <CardTitle>AI Agent Development</CardTitle>
                   <CardDescription>
-                    AI-driven web apps with modern architecture and clean UX.
+                    Autonomous agents built on LangGraph, CrewAI & AutoGen —
+                    from a single workflow agent to full multi-agent systems.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </motion.div>
+            <motion.div variants={staggerItem}>
+              <Card className="group h-full border-primary/20 bg-primary/5">
+                <CardHeader>
+                  <div className="mb-3 flex items-center gap-2">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
+                      <Sparkles className="h-6 w-6 text-primary" />
+                    </div>
+                    <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
+                      New
+                    </span>
+                  </div>
+                  <CardTitle>AI-Ingested Websites</CardTitle>
+                  <CardDescription>
+                    Your website, run by AI. Smart copy, 24/7 AI chatbot, and
+                    autonomous lead outreach — all pre-trained on your business.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -404,11 +437,12 @@ export default function Home() {
               <Card className="group h-full">
                 <CardHeader>
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
-                    <Palette className="h-6 w-6 text-primary" />
+                    <Code className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle>UI/UX Services</CardTitle>
+                  <CardTitle>Custom SaaS Development</CardTitle>
                   <CardDescription>
-                    Wireframes, prototypes, and polished interfaces users love.
+                    From MVP to enterprise scale — cloud-native, AI-augmented,
+                    and shipped in weeks, not months.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -421,34 +455,8 @@ export default function Home() {
                   </div>
                   <CardTitle>Mobile Applications</CardTitle>
                   <CardDescription>
-                    iOS/Android apps to extend your platform to every user.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </motion.div>
-            <motion.div variants={staggerItem}>
-              <Card className="group h-full">
-                <CardHeader>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
-                    <Cloud className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle>Cloud & DevOps</CardTitle>
-                  <CardDescription>
-                    CI/CD, monitoring, scaling, and cost-optimized deployments.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </motion.div>
-            <motion.div variants={staggerItem}>
-              <Card className="group h-full">
-                <CardHeader>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
-                    <Shield className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle>Security & Compliance</CardTitle>
-                  <CardDescription>
-                    Best practices for auth, data protection, audits, and
-                    hardening.
+                    iOS and Android apps that users love. React Native for speed
+                    without compromise, or native for peak performance.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -461,16 +469,66 @@ export default function Home() {
                   </div>
                   <CardTitle>Enterprise Solutions</CardTitle>
                   <CardDescription>
-                    Complex workflows, integrations, and multi-team rollouts.
+                    Complex workflows, legacy modernization, and multi-team
+                    rollouts — we handle scale and complexity so you don&apos;t
+                    have to.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </motion.div>
+            <motion.div variants={staggerItem}>
+              <Card className="group h-full">
+                <CardHeader>
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
+                    <Palette className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle>UI/UX Design</CardTitle>
+                  <CardDescription>
+                    Interfaces that convert. Research-backed, prototype-tested,
+                    and polished to the last pixel.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </motion.div>
+            <motion.div variants={staggerItem}>
+              <Card className="group h-full">
+                <CardHeader>
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
+                    <Cloud className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle>Cloud & DevOps</CardTitle>
+                  <CardDescription>
+                    CI/CD, monitoring, auto-scaling, and cost-optimized
+                    deployments — infra that just works.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </motion.div>
+            <motion.div variants={staggerItem}>
+              <Card className="group h-full">
+                <CardHeader>
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 group-hover:scale-110">
+                    <Shield className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle>Security & Compliance</CardTitle>
+                  <CardDescription>
+                    Enterprise-grade security by design — auth, encryption,
+                    audits, and compliance built in from day one.
                   </CardDescription>
                 </CardHeader>
               </Card>
             </motion.div>
           </StaggerContainer>
-          <FadeIn className="mt-10 flex justify-center">
+          <FadeIn className="mt-10 flex justify-center gap-4 flex-col sm:flex-row">
             <Button asChild size="lg">
               <Link href="/services">
-                Explore all services
+                Explore All Services
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/ai-agent-development">
+                Build AI Agents
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -583,15 +641,17 @@ export default function Home() {
             <FadeIn className="order-2 lg:order-1" x={-20}>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-primary/5 px-4 py-2 text-sm font-medium text-primary">
                 <Sparkles className="h-4 w-4" />
-                <span>Next-Gen Service</span>
+                <span>Next-Gen Service · BizSite AI</span>
               </div>
               <h2 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl leading-tight text-balance">
-                BizSite AI: <span className="text-primary">Website Creation</span> & Autonomous Presence
+                Your Website, Powered by AI —{" "}
+                <span className="text-primary">Generates Leads While You Sleep</span>
               </h2>
               <p className="mb-8 text-lg text-muted-foreground leading-relaxed">
-                We deliver more than just a website. We build an AI-ingested 
-                ecosystem that understands your business, engages your 
-                customers, and scales your outreach—all without you lifting a finger.
+                Forget static brochure sites. BizSite AI builds you a living,
+                breathing digital presence that researches your market, writes
+                your copy, chats with your visitors, and hunts down leads — all
+                on autopilot.
               </p>
               
               <StaggerContainer className="grid gap-6 mb-10">
@@ -600,10 +660,11 @@ export default function Home() {
                     <Brain className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-1">Smart Ingestion</h3>
+                    <h3 className="font-bold text-lg mb-1">AI Writes Your Copy</h3>
                     <p className="text-sm text-muted-foreground">
-                      Our AI agents research your business, competitors, and industry to craft 
-                      high-converting copy and design that reflects your brand perfectly.
+                      Our agents research your industry, study your competitors,
+                      and generate high-converting content that sounds like you —
+                      before you&apos;ve written a single word.
                     </p>
                   </div>
                 </motion.div>
@@ -613,10 +674,11 @@ export default function Home() {
                     <MessageSquare className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-1">24/7 AI Chatbot</h3>
+                    <h3 className="font-bold text-lg mb-1">24/7 AI Sales Assistant</h3>
                     <p className="text-sm text-muted-foreground">
-                      Every site includes a pre-trained autonomous assistant that knows your 
-                      offerings inside out, answering leads and booking meetings around the clock.
+                      Every BizSite AI site ships with a pre-trained chatbot that
+                      knows your offerings inside out. It qualifies leads, answers
+                      questions, and books calls — at 2am if needed.
                     </p>
                   </div>
                 </motion.div>
@@ -626,10 +688,11 @@ export default function Home() {
                     <Zap className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-1">Autonomous Lead Gen</h3>
+                    <h3 className="font-bold text-lg mb-1">Autonomous Outreach</h3>
                     <p className="text-sm text-muted-foreground">
-                      The Biz AI engine finds prospects and automatically sends them personalized 
-                      website previews, initiating the sales cycle while you sleep.
+                      The BizSite AI engine identifies your ideal prospects and
+                      sends them personalized previews automatically, starting
+                      conversations while you focus on closing.
                     </p>
                   </div>
                 </motion.div>
@@ -637,13 +700,13 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="rounded-full px-8">
-                  <Link href="#highlights">
-                    Get Your AI Preview
+                  <Link href="/ai-ingested-websites">
+                    Get Your AI-Powered Website
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="rounded-full px-8">
-                  <Link href="/products">View Sample Projects</Link>
+                  <Link href="/contact">See a Live Demo</Link>
                 </Button>
               </div>
             </FadeIn>
@@ -652,21 +715,13 @@ export default function Home() {
               <div className="relative aspect-square lg:aspect-[4/5] xl:aspect-square">
                 {/* Decorative background element */}
                 <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-[2rem] blur-2xl opacity-50 animate-pulse" />
-                
-                <div className="relative h-full w-full overflow-hidden rounded-[2rem] border bg-muted shadow-2xl transition-transform hover:scale-[1.02] duration-500">
-                  <Image
-                    src="/bizsite-ai-mockup.png"
-                    alt="BizSite AI Mockup - Premium Website with Chatbot"
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 50vw, 100vw"
+
+                <div className="relative h-full w-full overflow-hidden rounded-[2rem] border bg-gradient-to-br from-blue-50 to-indigo-50 shadow-2xl transition-transform hover:scale-[1.02] duration-500 p-8 flex items-center justify-center">
+                  <img
+                    src="/bizsite-ai-workflow.svg"
+                    alt="BizSite AI Workflow - AI Research, Copy Generation, 24/7 Chatbot, Autonomous Outreach"
+                    className="w-full h-full object-contain"
                   />
-                  
-                  {/* Floating badge */}
-                  <div className="absolute top-6 left-6 rounded-full bg-background/80 backdrop-blur-md border px-4 py-2 text-xs font-bold shadow-lg flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-                    AI ASSISTANT ONLINE
-                  </div>
                 </div>
               </div>
             </FadeIn>
@@ -685,15 +740,24 @@ export default function Home() {
               <span>AI-Powered Development</span>
             </div>
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              Custom AI Agents Development
+              Autonomous AI Agents That Actually Work in Production
             </h2>
             <p className="mx-auto max-w-3xl text-muted-foreground text-lg">
-              Build intelligent, autonomous AI agents that automate complex
-              business workflows, make data-driven decisions, and transform how
-              your organization operates. Our in-house AI agents power our
-              development process, ensuring faster delivery and higher quality
-              solutions.
+              Not demos. Not prototypes. Real agents that run your workflows,
+              make decisions, and integrate into your existing systems — built
+              and deployed by the team that uses AI agents internally every day.
             </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm font-medium">
+              <span className="flex items-center gap-2 rounded-full border bg-muted px-4 py-2">
+                <Zap className="h-4 w-4 text-primary" /> 70% faster delivery
+              </span>
+              <span className="flex items-center gap-2 rounded-full border bg-muted px-4 py-2">
+                <Bot className="h-4 w-4 text-primary" /> 15+ agents deployed
+              </span>
+              <span className="flex items-center gap-2 rounded-full border bg-muted px-4 py-2">
+                <Rocket className="h-4 w-4 text-primary" /> Agent MVP in 2 weeks
+              </span>
+            </div>
           </FadeIn>
           <div className="grid gap-8 lg:grid-cols-2 items-stretch">
             <Card className="relative overflow-hidden flex flex-col">
@@ -827,11 +891,16 @@ export default function Home() {
                   </CardHeader>
                 </Card>
               </FadeIn>
-              <FadeIn className="mt-6">
-                <Button asChild size="lg" className="w-full">
-                  <Link href="/contact">
-                    Discuss Your AI Agent Project
+              <FadeIn className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Button asChild size="lg" className="flex-1">
+                  <Link href="/ai-agent-development">
+                    Build My AI Agent
                     <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="flex-1">
+                  <Link href="/contact">
+                    Discuss Your Project
                   </Link>
                 </Button>
               </FadeIn>
@@ -936,18 +1005,26 @@ export default function Home() {
       <section className="border-t bg-primary/5 py-20">
         <FadeIn className="container mx-auto px-4 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-            Ready to Transform Your Organization?
+            Ready to Build Something Extraordinary?
           </h2>
           <p className="mb-8 mx-auto max-w-2xl text-muted-foreground">
-            Let&apos;s discuss how we can build a solution that fits your unique
-            needs and requirements.
+            Tell us what you need — AI agents, a SaaS platform, an AI-powered
+            website, or a full product. We&apos;ll tell you exactly how to build
+            it and how fast. No fluff, just results.
           </p>
-          <Button asChild size="lg">
-            <Link href="/contact">
-              Get in Touch
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button asChild size="lg">
+              <Link href="/contact">
+                Book a Free Strategy Call
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/services">
+                See Everything We Build
+              </Link>
+            </Button>
+          </div>
         </FadeIn>
       </section>
     </div>
