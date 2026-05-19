@@ -45,44 +45,46 @@ export function Footer() {
       </div>
 
       <div className="container mx-auto px-4 py-12 relative">
-        <div className="grid gap-4 lg:grid-cols-[3fr_1fr]">
+        <div className="grid gap-8 lg:grid-cols-[2fr_2fr_1.5fr_1fr]">
           {/* Primary Links */}
-          <nav
-            aria-label="Footer primary"
-            className="grid grid-cols-1 gap-8 sm:grid-cols-3"
-          >
-            <div className="space-y-3">
-              <Link href="/pages" className="group inline-flex items-center gap-2">
-                <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">Pages</h3>
-                <span className="opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0">→</span>
-              </Link>
-              <p className="text-sm text-muted-foreground">
-                Browse our full directory of services, solutions, and resources.
-              </p>
-            </div>
-            
-            <div className="space-y-3">
-              <Link href="/blog" className="group inline-flex items-center gap-2">
-                <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">Blog</h3>
-                 <span className="opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0">→</span>
-              </Link>
-              <p className="text-sm text-muted-foreground">
-                Insights on SaaS product delivery, automation, and tech trends.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <Link href="/case-studies" className="group inline-flex items-center gap-2">
-                <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-                  Case Studies
-                </h3>
-                 <span className="opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0">→</span>
-              </Link>
-              <p className="text-sm text-muted-foreground">
-                Real outcomes from our projects and success stories.
-              </p>
-            </div>
+          <nav aria-label="Footer primary" className="space-y-3">
+            <Link href="/services" className="group inline-flex items-center gap-2">
+              <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">Services</h3>
+              <span className="opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0">→</span>
+            </Link>
+            <p className="text-sm text-muted-foreground">
+              AI agents, SaaS, enterprise solutions, and custom software.
+            </p>
           </nav>
+
+          <nav aria-label="Footer resources" className="space-y-3">
+            <Link href="/blog" className="group inline-flex items-center gap-2">
+              <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">Resources</h3>
+              <span className="opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0">→</span>
+            </Link>
+            <p className="text-sm text-muted-foreground">
+              Blog, case studies, and insights on product delivery.
+            </p>
+          </nav>
+
+          {/* Contact Info */}
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold text-foreground">Contact</h3>
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <a href="mailto:contact@turicks.com" className="block hover:text-primary transition-colors">
+                contact@turicks.com
+              </a>
+              <a href="tel:+918660018590" className="block hover:text-primary transition-colors">
+                +91-8660018590
+              </a>
+              <p className="text-xs">
+                Smartworks, Sector 54<br />
+                Gurugram, India
+              </p>
+            </div>
+          </div>
+
+          {/* Social */}
           <div className="space-y-3">
             <h3 className="text-xs font-semibold text-foreground">Follow</h3>
             <div className="flex flex-col items-start gap-2" aria-label="Social media">
@@ -105,9 +107,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t/60 pt-8">
+        <div className="mt-8 border-t border-border/60 pt-8">
           <p className="text-center text-[11px] text-muted-foreground">
-            © {currentYear} Turicks. All rights reserved.
+            © {currentYear} Turicks. All rights reserved. | <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
           </p>
         </div>
       </div>

@@ -1,0 +1,147 @@
+<svg viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg-gradient { fill: url(#mainGradient); }
+      .text-title { font-family: 'Geist Sans', sans-serif; font-size: 16px; font-weight: 600; fill: #0f172a; }
+      .text-label { font-family: 'Geist Sans', sans-serif; font-size: 13px; font-weight: 500; fill: #475569; }
+      .accent-circle { fill: #3b82f6; opacity: 0.1; }
+      .accent-line { stroke: #3b82f6; stroke-width: 2; }
+      .icon-bg { fill: #3b82f6; }
+      .icon-color { fill: white; }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      .floating { animation: float 3s ease-in-out infinite; }
+    </style>
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.05" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.05" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="600" class="bg-gradient" rx="24"/>
+
+  <!-- Title -->
+  <text x="250" y="35" text-anchor="middle" class="text-title" style="font-size: 20px;">BizSite AI Workflow</text>
+
+  <!-- Left side: Website/Landing Page -->
+  <g transform="translate(40, 80)">
+    <!-- Website mockup -->
+    <rect width="140" height="180" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <rect width="140" height="30" rx="8" fill="#3b82f6" opacity="0.1"/>
+    <circle cx="20" cy="20" r="3" fill="#3b82f6"/>
+    <circle cx="30" cy="20" r="3" fill="#3b82f6"/>
+    <circle cx="40" cy="20" r="3" fill="#3b82f6"/>
+
+    <rect x="8" y="45" width="124" height="50" rx="4" fill="#e0e7ff" opacity="0.5"/>
+    <line x1="10" y1="60" x2="130" y2="60" stroke="#3b82f6" stroke-width="1" opacity="0.3"/>
+    <line x1="10" y1="70" x2="130" y2="70" stroke="#3b82f6" stroke-width="1" opacity="0.3"/>
+    <line x1="10" y1="80" x2="110" y2="80" stroke="#3b82f6" stroke-width="1" opacity="0.3"/>
+
+    <rect x="8" y="105" width="124" height="60" rx="4" fill="#f0f4f8" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="20" cy="125" r="4" fill="#3b82f6" opacity="0.2"/>
+    <line x1="32" y1="123" x2="125" y2="123" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="32" y1="130" x2="125" y2="130" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="32" y1="137" x2="115" y2="137" stroke="#94a3b8" stroke-width="1"/>
+    <circle cx="20" cy="152" r="4" fill="#3b82f6" opacity="0.2"/>
+    <line x1="32" y1="150" x2="125" y2="150" stroke="#94a3b8" stroke-width="1"/>
+
+    <!-- Label -->
+    <text x="70" y="210" text-anchor="middle" class="text-label">Your Website</text>
+  </g>
+
+  <!-- Center: Process flow -->
+  <g transform="translate(220, 120)">
+    <!-- Step 1: AI Research -->
+    <circle cx="0" cy="0" r="28" class="accent-circle"/>
+    <circle cx="0" cy="0" r="24" fill="#3b82f6" opacity="0.2" stroke="#3b82f6" stroke-width="1.5"/>
+
+    <!-- Brain icon -->
+    <path d="M -6 -8 Q -10 -8 -10 -4 Q -10 0 -6 2 Q -2 0 -2 -4 Q -2 -8 -6 -8 M 6 -8 Q 10 -8 10 -4 Q 10 0 6 2 Q 2 0 2 -4 Q 2 -8 6 -8 M -8 4 L 8 4" stroke="#3b82f6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <text x="0" y="45" text-anchor="middle" class="text-label">1. AI Research</text>
+    <text x="0" y="60" text-anchor="middle" class="text-label" style="font-size: 11px; fill: #94a3b8;">Analyzes your market</text>
+
+    <!-- Arrow down -->
+    <line x1="0" y1="70" x2="0" y2="95" stroke="#cbd5e1" stroke-width="2"/>
+    <polygon points="0,100 -4,90 4,90" fill="#cbd5e1"/>
+
+    <!-- Step 2: Copy Generation -->
+    <circle cx="0" cy="125" r="28" class="accent-circle"/>
+    <circle cx="0" cy="125" r="24" fill="#3b82f6" opacity="0.2" stroke="#3b82f6" stroke-width="1.5"/>
+
+    <!-- Sparkles icon -->
+    <path d="M -2 -8 L 0 -2 L 2 -8 M -8 -2 L -2 0 L -8 2 M 8 -2 L 2 0 L 8 2" stroke="#3b82f6" stroke-width="1.5" fill="none" stroke-linecap="round" transform="translate(0, 125)"/>
+
+    <text x="0" y="170" text-anchor="middle" class="text-label">2. Generate Copy</text>
+    <text x="0" y="185" text-anchor="middle" class="text-label" style="font-size: 11px; fill: #94a3b8;">Smart, converting content</text>
+
+    <!-- Arrow down -->
+    <line x1="0" y1="195" x2="0" y2="220" stroke="#cbd5e1" stroke-width="2"/>
+    <polygon points="0,225 -4,215 4,215" fill="#cbd5e1"/>
+
+    <!-- Step 3: AI Chatbot -->
+    <circle cx="0" cy="250" r="28" class="accent-circle"/>
+    <circle cx="0" cy="250" r="24" fill="#3b82f6" opacity="0.2" stroke="#3b82f6" stroke-width="1.5"/>
+
+    <!-- Chat icon -->
+    <path d="M -8 -6 L 8 -6 Q 10 -6 10 -4 L 10 6 L 2 10 L 2 6 L -8 6 Q -10 6 -10 4 L -10 -4 Q -10 -6 -8 -6" stroke="#3b82f6" stroke-width="1.5" fill="none" stroke-linejoin="round" transform="translate(0, 250)"/>
+
+    <text x="0" y="295" text-anchor="middle" class="text-label">3. AI Chatbot</text>
+    <text x="0" y="310" text-anchor="middle" class="text-label" style="font-size: 11px; fill: #94a3b8;">Qualifies & engages leads</text>
+
+    <!-- Arrow down -->
+    <line x1="0" y1="320" x2="0" y2="345" stroke="#cbd5e1" stroke-width="2"/>
+    <polygon points="0,350 -4,340 4,340" fill="#cbd5e1"/>
+
+    <!-- Step 4: Autonomous Outreach -->
+    <circle cx="0" cy="375" r="28" class="accent-circle"/>
+    <circle cx="0" cy="375" r="24" fill="#3b82f6" opacity="0.2" stroke="#3b82f6" stroke-width="1.5"/>
+
+    <!-- Rocket icon -->
+    <path d="M 0 -10 L -4 4 L 0 0 L 4 4 Z M -6 4 L -8 12 L 0 8 L 8 12 L 6 4" stroke="#3b82f6" stroke-width="1.5" fill="none" stroke-linejoin="round" transform="translate(0, 375)"/>
+
+    <text x="0" y="420" text-anchor="middle" class="text-label">4. Autonomous Outreach</text>
+    <text x="0" y="435" text-anchor="middle" class="text-label" style="font-size: 11px; fill: #94a3b8;">Finds & contacts prospects</text>
+  </g>
+
+  <!-- Right side: Results -->
+  <g transform="translate(355, 120)">
+    <!-- Result box 1 -->
+    <rect width="120" height="70" rx="12" fill="#ecfdf5" stroke="#d1fae5" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="15" cy="15" r="6" fill="#10b981"/>
+    <text x="70" y="18" text-anchor="middle" class="text-title" style="fill: #10b981; font-size: 18px;">24/7</text>
+    <text x="70" y="50" text-anchor="middle" class="text-label" style="font-size: 12px; fill: #059669;">Active Lead</text>
+    <text x="70" y="65" text-anchor="middle" class="text-label" style="font-size: 12px; fill: #059669;">Generation</text>
+
+    <!-- Arrow -->
+    <line x1="60" y1="85" x2="60" y2="115" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+    <!-- Result box 2 -->
+    <rect width="120" height="70" y="120" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="15" cy="135" r="6" fill="#3b82f6"/>
+    <text x="70" y="138" text-anchor="middle" class="text-title" style="fill: #3b82f6; font-size: 18px;">100%</text>
+    <text x="70" y="170" text-anchor="middle" class="text-label" style="font-size: 12px; fill: #1e40af;">Pre-trained</text>
+    <text x="70" y="185" text-anchor="middle" class="text-label" style="font-size: 12px; fill: #1e40af;">on Your Business</text>
+
+    <!-- Arrow -->
+    <line x1="60" y1="205" x2="60" y2="235" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+    <!-- Result box 3 -->
+    <rect width="120" height="70" y="240" rx="12" fill="#fef3c7" stroke="#fde68a" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="15" cy="255" r="6" fill="#f59e0b"/>
+    <text x="70" y="258" text-anchor="middle" class="text-title" style="fill: #f59e0b; font-size: 18px;">2X</text>
+    <text x="70" y="290" text-anchor="middle" class="text-label" style="font-size: 12px; fill: #b45309;">Faster Lead</text>
+    <text x="70" y="305" text-anchor="middle" class="text-label" style="font-size: 12px; fill: #b45309;">Qualification</text>
+  </g>
+
+  <!-- Bottom: Connected flow indicator -->
+  <g transform="translate(250, 540)">
+    <circle cx="-40" cy="0" r="4" fill="#3b82f6"/>
+    <line x1="-36" y1="0" x2="36" y2="0" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="40" cy="0" r="4" fill="#3b82f6"/>
+    <text x="0" y="-15" text-anchor="middle" class="text-label" style="font-size: 12px;">All systems working together</text>
+  </g>
+</svg>
