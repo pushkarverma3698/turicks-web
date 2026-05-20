@@ -24,6 +24,10 @@
 .DS_Store
 *.pem
 
+# macOS Finder duplicate copies
+* 2.*
+* 3.*
+
 # debug
 npm-debug.log*
 yarn-debug.log*
