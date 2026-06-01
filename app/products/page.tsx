@@ -17,6 +17,11 @@ import {
   FileText,
   Play,
   Sparkles,
+  Download,
+  Code2,
+  MessageSquare,
+  Target,
+  ExternalLink,
 } from "lucide-react";
 import { VideoPreviewModal } from "@/components/video-preview-modal";
 import { DecorativeOrbs } from "@/components/decorative-orbs";
@@ -90,6 +95,62 @@ const products = [
   },
 ];
 
+// ── Digital / Downloadable Products ──────────────────────────────────────────
+const digitalProducts = [
+  {
+    id: "cinematic-premium-pack",
+    name: "Cinematic Premium Pack",
+    tagline: "3 exclusive design systems for cinematic-web",
+    description:
+      "Aurora SaaS (gradient + glass), Noir Atelier (monochrome editorial), Ember Startup (warm launch energy) — plus a premium AI build-prompt library and a 30-minute launch guide.",
+    price: "$29",
+    priceNote: "One-time · Unlimited commercial use",
+    icon: Sparkles,
+    badge: "Design",
+    highlights: ["3 exclusive presets", "AI build-prompt library", "30-min launch guide", "Commercial license"],
+    gumroadUrl: "https://turicks.com",  // TODO: replace with live Gumroad URL
+  },
+  {
+    id: "prospecting-icp-pack",
+    name: "Prospecting & ICP Scoring Pack",
+    tagline: "Qualify B2B leads with AI — URL to email in 3 steps",
+    description:
+      "4 production prompts: disambiguate URL → extract B2B intelligence → ICP score with hard disqualifiers → draft a personalized outreach email. Works in Claude, ChatGPT, n8n, or LangGraph.",
+    price: "$19",
+    priceNote: "One-time · Unlimited use",
+    icon: Target,
+    badge: "Sales",
+    highlights: ["4 production prompts", "ICP rubric builder", "n8n + LangGraph guide", "~$0.013/lead to run"],
+    gumroadUrl: "https://turicks.com",  // TODO: replace with live Gumroad URL
+  },
+  {
+    id: "brand-voice-critique-kit",
+    name: "Brand-Voice Critique Kit",
+    tagline: "Catch weak content before it ships",
+    description:
+      "TypeScript + Python validators (zero dependencies) + LLM critique prompt + banned phrase guide + channel rules. Runs free deterministic checks first — LLM only when needed.",
+    price: "$14",
+    priceNote: "One-time",
+    icon: MessageSquare,
+    badge: "Content",
+    highlights: ["TS + Python validators", "LLM critique prompt", "22 banned phrases guide", "Channel rules + limits"],
+    gumroadUrl: "https://turicks.com",  // TODO: replace with live Gumroad URL
+  },
+  {
+    id: "langgraph-starter",
+    name: "LangGraph Multi-Agent Starter",
+    tagline: "Production-grade skeleton — not a toy example",
+    description:
+      "Registry-driven agents, critic as a node, DB-backed HITL, tenant-isolated Redis cache, Drizzle schema, 13 tests. Every hard architecture decision already made and documented inline.",
+    price: "$34",
+    priceNote: "One-time",
+    icon: Code2,
+    badge: "Engineering",
+    highlights: ["Registry-driven design", "DB-backed HITL pattern", "Tenant-isolated Redis cache", "13 passing tests"],
+    gumroadUrl: "https://turicks.com",  // TODO: replace with live Gumroad URL
+  },
+];
+
 export default function ProductsPage() {
   const [selectedVideo, setSelectedVideo] = useState<{
     url: string;
@@ -159,7 +220,64 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Digital Products — Gumroad downloads */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="mb-10">
+          <div className="inline-flex items-center gap-2 mb-3 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20">
+            <Download className="h-4 w-4 text-primary" />
+            <span className="text-sm font-semibold text-primary">Digital Downloads</span>
+          </div>
+          <h2 className="text-3xl font-bold md:text-4xl mb-3">AI Tools & Prompt Packs</h2>
+          <p className="text-muted-foreground max-w-2xl">
+            Self-contained digital products built from our live production systems.
+            Working code and calibrated prompts — not templates.
+          </p>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {digitalProducts.map((product) => {
+            const Icon = product.icon;
+            return (
+              <Card key={product.id} className="flex flex-col border hover:border-primary/40 transition-colors">
+                <CardHeader className="pb-3">
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <div className="p-2 rounded-lg bg-primary/10">
+                      <Icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <Badge variant="secondary" className="text-xs">{product.badge}</Badge>
+                  </div>
+                  <CardTitle className="text-lg leading-snug">{product.name}</CardTitle>
+                  <p className="text-xs text-muted-foreground">{product.tagline}</p>
+                </CardHeader>
+                <CardContent className="flex flex-col flex-1 gap-4">
+                  <p className="text-sm text-muted-foreground">{product.description}</p>
+                  <ul className="space-y-1.5 flex-1">
+                    {product.highlights.map((h) => (
+                      <li key={h} className="flex items-start gap-2 text-xs">
+                        <CheckCircle2 className="h-3.5 w-3.5 mt-0.5 shrink-0 text-primary" />
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="pt-2 border-t">
+                    <div className="flex items-baseline gap-2 mb-3">
+                      <span className="text-2xl font-bold">{product.price}</span>
+                      <span className="text-xs text-muted-foreground">{product.priceNote}</span>
+                    </div>
+                    <Button asChild className="w-full" size="sm">
+                      <Link href={product.gumroadUrl} target="_blank" rel="noopener noreferrer">
+                        Buy Now
+                        <ExternalLink className="ml-2 h-3.5 w-3.5" />
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* SaaS Products Grid */}
       <section className="container mx-auto px-4 py-12">
         <div className="space-y-24">
           {products.map((product) => (
