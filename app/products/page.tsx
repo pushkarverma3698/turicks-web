@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -96,11 +96,25 @@ const products = [
 ];
 
 // ── Digital / Downloadable Products ──────────────────────────────────────────
-const digitalProducts = [
+type DigitalProduct = {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  price: string;
+  priceNote: string;
+  icon: React.ElementType;
+  badge: string;
+  highlights: string[];
+  gumroadUrl: string;
+  featured?: boolean;
+};
+
+const digitalProducts: DigitalProduct[] = [
   {
     id: "cinematic-premium-pack",
     name: "Cinematic Premium Pack",
-    tagline: "3 exclusive design systems for cinematic-web",
+    tagline: "Premium add-ons for cinematic-web (free, open-source)",
     description:
       "Aurora SaaS (gradient + glass), Noir Atelier (monochrome editorial), Ember Startup (warm launch energy) — plus a premium AI build-prompt library and a 30-minute launch guide.",
     price: "$29",
@@ -130,7 +144,7 @@ const digitalProducts = [
     description:
       "TypeScript + Python validators (zero dependencies) + LLM critique prompt + banned phrase guide + channel rules. Runs free deterministic checks first — LLM only when needed.",
     price: "$14",
-    priceNote: "One-time",
+    priceNote: "One-time · Unlimited commercial use",
     icon: MessageSquare,
     badge: "Content",
     highlights: ["TS + Python validators", "LLM critique prompt", "22 banned phrases guide", "Channel rules + limits"],
@@ -143,9 +157,10 @@ const digitalProducts = [
     description:
       "Registry-driven agents, critic as a node, DB-backed HITL, tenant-isolated Redis cache, Drizzle schema, 13 tests. Every hard architecture decision already made and documented inline.",
     price: "$34",
-    priceNote: "One-time",
+    priceNote: "One-time · Unlimited commercial use",
     icon: Code2,
     badge: "Engineering",
+    featured: true,
     highlights: ["Registry-driven design", "DB-backed HITL pattern", "Tenant-isolated Redis cache", "13 passing tests"],
     gumroadUrl: "https://turicks.com",  // TODO: replace with live Gumroad URL
   },
@@ -209,12 +224,10 @@ export default function ProductsPage() {
         <div className="container mx-auto px-4 relative">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-              Our SaaS Products
+              Products & Tools
             </h1>
             <p className="text-lg text-muted-foreground md:text-xl">
-              Explore our ready-made solutions designed for specific
-              organizational needs. Each product is built with expertise and can
-              be customized to fit your requirements.
+              AI tools, prompt packs, and production-ready code from our live systems — plus bespoke SaaS platforms built for specific industries.
             </p>
           </div>
         </div>
@@ -229,15 +242,26 @@ export default function ProductsPage() {
           </div>
           <h2 className="text-3xl font-bold md:text-4xl mb-3">AI Tools & Prompt Packs</h2>
           <p className="text-muted-foreground max-w-2xl">
-            Self-contained digital products built from our live production systems.
-            Working code and calibrated prompts — not templates.
+            Extracted from our live production systems. Working code, calibrated prompts — battle-tested, not templated.
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {digitalProducts.map((product) => {
             const Icon = product.icon;
             return (
-              <Card key={product.id} className="flex flex-col border hover:border-primary/40 transition-colors">
+              <Card
+                key={product.id}
+                className={`flex flex-col transition-colors ${
+                  product.featured
+                    ? "border-2 border-primary hover:border-primary/70"
+                    : "border hover:border-primary/40"
+                }`}
+              >
+                {product.featured && (
+                  <div className="px-4 pt-3 -mb-1">
+                    <Badge className="text-xs bg-primary text-primary-foreground">Most Complete</Badge>
+                  </div>
+                )}
                 <CardHeader className="pb-3">
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <div className="p-2 rounded-lg bg-primary/10">
@@ -265,7 +289,7 @@ export default function ProductsPage() {
                     </div>
                     <Button asChild className="w-full" size="sm">
                       <Link href={product.gumroadUrl} target="_blank" rel="noopener noreferrer">
-                        Buy Now
+                        Get it on Gumroad
                         <ExternalLink className="ml-2 h-3.5 w-3.5" />
                       </Link>
                     </Button>
@@ -278,7 +302,7 @@ export default function ProductsPage() {
       </section>
 
       {/* SaaS Products Grid */}
-      <section className="container mx-auto px-4 py-12">
+      <section className="container mx-auto px-4 py-12 border-t mt-4">
         <div className="space-y-24">
           {products.map((product) => (
             <div key={product.id} id={product.id} className="scroll-mt-20">
