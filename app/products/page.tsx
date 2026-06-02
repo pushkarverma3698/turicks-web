@@ -122,7 +122,7 @@ const digitalProducts: DigitalProduct[] = [
     icon: Sparkles,
     badge: "Design",
     highlights: ["3 exclusive presets", "AI build-prompt library", "30-min launch guide", "Commercial license"],
-    gumroadUrl: "https://turicks.com",  // TODO: replace with live Gumroad URL
+    gumroadUrl: "",
   },
   {
     id: "prospecting-icp-pack",
@@ -135,7 +135,7 @@ const digitalProducts: DigitalProduct[] = [
     icon: Target,
     badge: "Sales",
     highlights: ["4 production prompts", "ICP rubric builder", "n8n + LangGraph guide", "~$0.013/lead to run"],
-    gumroadUrl: "https://turicks.com",  // TODO: replace with live Gumroad URL
+    gumroadUrl: "",
   },
   {
     id: "brand-voice-critique-kit",
@@ -148,7 +148,7 @@ const digitalProducts: DigitalProduct[] = [
     icon: MessageSquare,
     badge: "Content",
     highlights: ["TS + Python validators", "LLM critique prompt", "22 banned phrases guide", "Channel rules + limits"],
-    gumroadUrl: "https://turicks.com",  // TODO: replace with live Gumroad URL
+    gumroadUrl: "",
   },
   {
     id: "langgraph-starter",
@@ -162,7 +162,7 @@ const digitalProducts: DigitalProduct[] = [
     badge: "Engineering",
     featured: true,
     highlights: ["Registry-driven design", "DB-backed HITL pattern", "Tenant-isolated Redis cache", "13 passing tests"],
-    gumroadUrl: "https://turicks.com",  // TODO: replace with live Gumroad URL
+    gumroadUrl: "",
   },
 ];
 
@@ -287,12 +287,18 @@ export default function ProductsPage() {
                       <span className="text-2xl font-bold">{product.price}</span>
                       <span className="text-xs text-muted-foreground">{product.priceNote}</span>
                     </div>
-                    <Button asChild className="w-full" size="sm">
-                      <Link href={product.gumroadUrl} target="_blank" rel="noopener noreferrer">
-                        Get it on Gumroad
-                        <ExternalLink className="ml-2 h-3.5 w-3.5" />
-                      </Link>
-                    </Button>
+                    {product.gumroadUrl ? (
+                      <Button asChild className="w-full" size="sm">
+                        <Link href={product.gumroadUrl} target="_blank" rel="noopener noreferrer">
+                          Get it on Gumroad
+                          <ExternalLink className="ml-2 h-3.5 w-3.5" />
+                        </Link>
+                      </Button>
+                    ) : (
+                      <Button className="w-full" size="sm" disabled>
+                        Coming Soon
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>
