@@ -33,6 +33,22 @@ npm run lint     # ESLint 9
 
 This catches character encoding issues, TypeScript errors, and syntax problems early.
 
+## Session Knowledge Retention & LLM Fine-Tuning Protocol
+
+**MANDATORY END-OF-SESSION ACTION**:
+At the end of every engineering or strategic session, the AI agent MUST call the `add_turicks_note` tool on the `turicks-brain` MCP server to record a structured session summary note.
+
+**Purpose**: Accumulate high-quality, real-world engineering decisions, architectural patterns, code changes, and problem-solving logs into `turicks-brain` to build the training dataset for fine-tuning our custom local LLM at year-end.
+
+**Format for `add_turicks_note`**:
+- **tags**: `"session-summary,fine-tuning,<project-name>,<topics>"`
+- **text**: Structured markdown detailing:
+  1. **Goal & Problem Solved**
+  2. **Key Architectural & Code Changes Made**
+  3. **Schemas / Metadata Updated**
+  4. **Verification & Build Results**
+  5. **Next Steps & Strategic Insights**
+
 ## Build Error Diagnosis & Character Encoding Issues
 
 ### Problem: Smart Quotes in Code
