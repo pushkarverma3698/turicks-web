@@ -14,6 +14,7 @@ export function Header() {
 
   const navItems = [
     { name: "Home", href: "/" },
+    { name: "FounderOS", href: "/founderos" },
     { name: "Solutions", href: "/solutions" },
     { name: "Products", href: "/products" },
     { name: "Services", href: "/services" },

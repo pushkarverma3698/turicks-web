@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "/",
     "/ai-agent-development",
+    "/founderos",
     "/ai-ingested-websites",
     "/services",
     "/products",
@@ -31,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const highPriorityRoutes = new Set([
     "/ai-agent-development",
+    "/founderos",
     "/ai-ingested-websites",
     "/services",
   ]);

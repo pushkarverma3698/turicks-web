@@ -21,28 +21,24 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://turicks.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "AI Agent Development & Custom SaaS Solutions | Turicks",
+    default: "Production-Ready AI Agents & FounderOS | Turicks",
     template: "%s | Turicks",
   },
   description:
-    "Build custom AI agents, AI-ingested websites & production SaaS — faster than you think. India's AI-native dev team. Book your free strategy call today.",
+    "Turicks deploys production-ready AI agents via FounderOS — our orchestration engine for multi-agent state graphs, bounded autonomy, and MCP tool integration. Plus 3D web experiences.",
   keywords: [
-    "AI agent development company India",
-    "agentic AI development",
-    "custom AI agents",
-    "LangGraph development",
-    "multi-agent systems",
+    "production-ready AI agents",
+    "FounderOS",
+    "AI agent orchestration platform",
+    "multi-agent system deployment",
+    "LangGraph development company",
+    "Model Context Protocol",
+    "bounded autonomy AI",
     "AI-ingested websites",
     "BizSite AI",
-    "autonomous AI agents",
-    "SaaS development company India",
-    "custom SaaS development",
-    "AI automation",
-    "software development agency India",
-    "custom software solutions",
-    "build SaaS MVP",
-    "EdTech software development",
-    "school management system",
+    "3D web experiences",
+    "custom SaaS development India",
+    "agentic AI orchestration",
   ],
   robots: {
     index: true,
@@ -56,9 +52,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "AI Agent Development & Custom SaaS Solutions | Turicks",
+    title: "Production-Ready AI Agents & FounderOS | Turicks",
     description:
-      "Build custom AI agents, AI-ingested websites & production SaaS — faster than you think. India's AI-native dev team. Book your free strategy call today.",
+      "Turicks deploys production-ready AI agents via FounderOS — our orchestration engine for multi-agent state graphs, bounded autonomy, and MCP tool integration.",
     type: "website",
     url: SITE_URL,
     siteName: "Turicks",
@@ -68,15 +64,15 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/og-image.svg`,
         width: 1200,
         height: 630,
-        alt: "Turicks — AI Agent Development & Custom SaaS",
+        alt: "Turicks — Production-Ready AI Agents & FounderOS",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Agent Development & Custom SaaS | Turicks",
+    title: "Production-Ready AI Agents & FounderOS | Turicks",
     description:
-      "Custom AI agents, AI-ingested websites & SaaS platforms — built and deployed by India's AI-native team.",
+      "Deploy autonomous AI agents powered by FounderOS — state graphs, bounded autonomy, MCP tools, and 3D web experiences.",
     images: [`${SITE_URL}/og-image.svg`],
   },
   alternates: {
@@ -89,6 +85,52 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Turicks",
+    url: SITE_URL,
+    logo: `${SITE_URL}/apple-icon`,
+    description: "AI-native software development partner engineering production-ready AI agents via FounderOS and 3D web experiences.",
+  };
+
+  const founderOSProductSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "FounderOS",
+    description:
+      "Enterprise AI agent orchestration platform for deploying production-ready multi-agent systems with state graphs, bounded autonomy, MCP integrations, and full tracing.",
+    brand: {
+      "@type": "Organization",
+      name: "Turicks",
+    },
+    category: "AI Agent Orchestration Engine",
+    url: `${SITE_URL}/founderos`,
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Why do AI agent pilots fail in production?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Over 85% of AI agent pilots fail in production due to lack of bounded autonomy, unhandled state drift, missing observability, and unsecure API permissions. FounderOS by Turicks provides graph-based state management, human-in-the-loop gates, and MCP tool integration to guarantee production reliability.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What is FounderOS by Turicks?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "FounderOS is Turicks' proprietary AI agent orchestration engine. It orchestrates multi-agent systems built on LangGraph, AutoGen, and CrewAI, enforcing policy guardrails, Model Context Protocol (MCP) integrations, and real-time step-by-step tracing.",
+        },
+      },
+    ],
+  };
+
   return (
     <html lang="en">
       <body
@@ -98,13 +140,19 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Turicks",
-              url: SITE_URL,
-              logo: `${SITE_URL}/apple-icon`,
-            }),
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(founderOSProductSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema),
           }}
         />
         <ColorfulVectors />

@@ -1,0 +1,10 @@
+name = "turicks-chatbot-backend"
+main = "src/index.ts"
+compatibility_date = "2024-03-01"
+
+[vars]
+# Add public non-sensitive environment variables here if needed
+# Sensitive variables (like GEMINI_API_KEY) should be set using: wrangler secret put GEMINI_API_KEY
+
+[observability]
+enabled = true
