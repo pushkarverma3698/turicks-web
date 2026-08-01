@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -30,7 +31,14 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/40">
       <nav className="container mx-auto flex h-18 items-center justify-between px-4 py-3">
-        <Link href="/" className="flex items-center" aria-label="Turicks home">
+        <Link href="/" className="flex items-center gap-2" aria-label="Turicks home">
+          <Image
+            src="/log/logo-turicks-morphic.jpg"
+            alt="Turicks Morphic Logo"
+            width={32}
+            height={32}
+            className="rounded-full object-cover"
+          />
           <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
             Turicks
           </span>
